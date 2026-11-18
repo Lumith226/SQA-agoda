@@ -1,0 +1,6 @@
+# Preserve the exact supplied source bytes for SHA-256 reproduction.
+backend/** -text
+work/tests/** -text
+*.xlsx binary
+*.png binary
+*.log -text

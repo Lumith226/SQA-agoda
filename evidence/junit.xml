@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="53" skipped="0" tests="589" time="47.715" timestamp="2026-11-18T22:11:52.140174+07:00" hostname="LumithPC"><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX01]" time="0.606"><failure message="ValueError: Field 'id' expected a number but got 'bad'.">.tools\python\Lib\site-packages\django\db\models\fields\__init__.py:2053: in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'bad'
+
+The above exception was the direct cause of the following exception:
+work\tests\test_additional_views.py:27: in test_hotel_filter_boundaries
+    response=request_view(factory,hv.HotelListView,payload=query,user=None if value=='anonymous' else data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\mixins.py:43: in list
+    return self.get_paginated_response(serializer.data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:182: in get_paginated_response
+    return self.paginator.get_paginated_response(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:126: in get_paginated_response
+    total_count = Hotel.objects.filter(**self.filters).count()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1436: in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1454: in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+.tools\python\Lib\site-packages\django\db\models\query.py:1461: in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1546: in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1577: in _add_q
+    child_clause, needed_inner = self.build_filter(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1492: in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1319: in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\lookups.py:27: in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\fields\related_lookups.py:166: in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\fields\__init__.py:2055: in get_prep_value
+    raise e.__class__(
+E   ValueError: Field 'id' expected a number but got 'bad'.</failure></testcase><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX02]" time="0.050"><failure message="ValueError: Field 'id' expected a number but got 'bad'.">.tools\python\Lib\site-packages\django\db\models\fields\__init__.py:2053: in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'bad'
+
+The above exception was the direct cause of the following exception:
+work\tests\test_additional_views.py:27: in test_hotel_filter_boundaries
+    response=request_view(factory,hv.HotelListView,payload=query,user=None if value=='anonymous' else data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\mixins.py:43: in list
+    return self.get_paginated_response(serializer.data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:182: in get_paginated_response
+    return self.paginator.get_paginated_response(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:126: in get_paginated_response
+    total_count = Hotel.objects.filter(**self.filters).count()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1436: in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1454: in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+.tools\python\Lib\site-packages\django\db\models\query.py:1461: in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1546: in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1577: in _add_q
+    child_clause, needed_inner = self.build_filter(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1492: in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1319: in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\lookups.py:27: in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\fields\related_lookups.py:166: in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\fields\__init__.py:2055: in get_prep_value
+    raise e.__class__(
+E   ValueError: Field 'id' expected a number but got 'bad'.</failure></testcase><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX03]" time="0.062" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX04]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX05]" time="0.055" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX06]" time="0.057" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX07]" time="0.057" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX08]" time="0.059" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX09]" time="0.057" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX10]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX11]" time="0.055" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX12]" time="0.055" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX13]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX14]" time="0.059" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX15]" time="0.055" /><testcase classname="work.tests.test_additional_views" name="test_hotel_filter_boundaries[H-QX16]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I01]" time="0.056" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I02]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I03]" time="0.062" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I04]" time="0.047" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I05]" time="0.050" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I06]" time="0.050" /><testcase classname="work.tests.test_additional_views" name="test_hotel_interactions[H-I07]" time="0.047" /><testcase classname="work.tests.test_additional_views" name="test_hotel_pagination_request_isolation[H-ISOLATION01]" time="0.045"><failure message="AssertionError: Class-level filters leak from a previous request&#10;assert 'city_id' not in {'city_id': '99999'}&#10; +  where {'city_id': '99999'} = &lt;hotels.views.HotelPagination object at 0x00000281D06536E0&gt;.filters">work\tests\test_additional_views.py:53: in test_hotel_pagination_request_isolation
+    assert 'city_id' not in second.filters,'Class-level filters leak from a previous request'
+E   AssertionError: Class-level filters leak from a previous request
+E   assert 'city_id' not in {'city_id': '99999'}
+E    +  where {'city_id': '99999'} = &lt;hotels.views.HotelPagination object at 0x00000281D06536E0&gt;.filters</failure></testcase><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[RO-NP01]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[RO-NP02]" time="0.052" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[RO-NP03]" time="0.049" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[BO-NP04]" time="0.053" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[BO-NP05]" time="0.052" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[PR-NP06]" time="0.053" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[PR-NP07]" time="0.049" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[PR-NP08]" time="0.048" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[PR-NP09]" time="0.049" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[PR-NP10]" time="0.048" /><testcase classname="work.tests.test_additional_views" name="test_unpaginated_lists[PR-NP11]" time="0.050" /><testcase classname="work.tests.test_additional_views" name="test_image_delete[H-IMG01]" time="0.061" /><testcase classname="work.tests.test_additional_views" name="test_image_delete[H-IMG02]" time="0.049" /><testcase classname="work.tests.test_additional_views" name="test_image_delete[R-IMG03]" time="0.050" /><testcase classname="work.tests.test_additional_views" name="test_image_delete[R-IMG04]" time="0.053" /><testcase classname="work.tests.test_additional_views" name="test_room_overlap[R-OVERLAP01]" time="0.054" /><testcase classname="work.tests.test_additional_views" name="test_room_overlap[R-OVERLAP02]" time="0.055" /><testcase classname="work.tests.test_additional_views" name="test_room_booking_detail_view[R-DETAIL01]" time="0.065" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N01]" time="0.068" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N02]" time="0.068" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N03]" time="0.069" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N04]" time="0.069" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N05]" time="0.082" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N06]" time="0.077" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N07]" time="0.068" /><testcase classname="work.tests.test_booking_services" name="test_create_service_booking[B-N08]" time="0.067" /><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X01]" time="0.055"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X02]" time="0.056"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X03]" time="0.057"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X04]" time="0.057"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X05]" time="0.056"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X06]" time="0.065"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_invalid_service_booking_atomicity[B-X07]" time="0.059"><failure message="AssertionError: Rejected service request left an orphan booking&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects">work\tests\test_booking_services.py:38: in test_invalid_service_booking_atomicity
+    assert Booking.objects.count()==before,'Rejected service request left an orphan booking'
+E   AssertionError: Rejected service request left an orphan booking
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CEB86510&gt; = Booking.objects</failure></testcase><testcase classname="work.tests.test_booking_services" name="test_rebook_service[B-RE01]" time="0.076" /><testcase classname="work.tests.test_booking_services" name="test_rebook_service[B-RE02]" time="0.069" /><testcase classname="work.tests.test_booking_services" name="test_rebook_service[B-RE03]" time="0.085" /><testcase classname="work.tests.test_booking_services" name="test_rebook_service[B-RE04]" time="0.072" /><testcase classname="work.tests.test_booking_services" name="test_rebook_pending_rejected[B-RE05]" time="0.051" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C01]" time="0.060" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C02]" time="0.056" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C03]" time="0.057"><failure message="AssertionError: Rejected request left an orphan promotion row&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt; = Promotion.objects">work\tests\test_campaigns.py:22: in test_create_campaign
+    assert Promotion.objects.count()==before,'Rejected request left an orphan promotion row'
+E   AssertionError: Rejected request left an orphan promotion row
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt; = Promotion.objects</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C04]" time="0.054"><failure message="django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent">.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   sqlite3.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent
+
+The above exception was the direct cause of the following exception:
+work\tests\test_campaigns.py:19: in test_create_campaign
+    response=request_view(factory,v.PromotionCreateView,'post',payload,data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:194: in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\promotions\views.py:330: in create
+    promotion = Promotion.objects.create(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:658: in create
+    obj.save(force_insert=True, using=self.db)
+.tools\python\Lib\site-packages\django\db\models\base.py:814: in save
+    self.save_base(
+.tools\python\Lib\site-packages\django\db\models\base.py:877: in save_base
+    updated = self._save_table(
+.tools\python\Lib\site-packages\django\db\models\base.py:1020: in _save_table
+    results = self._do_insert(
+.tools\python\Lib\site-packages\django\db\models\base.py:1061: in _do_insert
+    return manager._insert(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\compiler.py:1822: in execute_sql
+    cursor.execute(sql, params)
+.tools\python\Lib\site-packages\django\db\backends\utils.py:67: in execute
+    return self._execute_with_wrappers(
+.tools\python\Lib\site-packages\django\db\backends\utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C05]" time="0.098" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C06]" time="0.057" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C07]" time="0.056"><failure message="AssertionError: Rejected request left an orphan promotion row&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt; = Promotion.objects">work\tests\test_campaigns.py:22: in test_create_campaign
+    assert Promotion.objects.count()==before,'Rejected request left an orphan promotion row'
+E   AssertionError: Rejected request left an orphan promotion row
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt; = Promotion.objects</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C08]" time="0.056"><failure message="django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent">.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   sqlite3.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent
+
+The above exception was the direct cause of the following exception:
+work\tests\test_campaigns.py:19: in test_create_campaign
+    response=request_view(factory,v.PromotionCreateView,'post',payload,data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:194: in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\promotions\views.py:330: in create
+    promotion = Promotion.objects.create(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:658: in create
+    obj.save(force_insert=True, using=self.db)
+.tools\python\Lib\site-packages\django\db\models\base.py:814: in save
+    self.save_base(
+.tools\python\Lib\site-packages\django\db\models\base.py:877: in save_base
+    updated = self._save_table(
+.tools\python\Lib\site-packages\django\db\models\base.py:1020: in _save_table
+    results = self._do_insert(
+.tools\python\Lib\site-packages\django\db\models\base.py:1061: in _do_insert
+    return manager._insert(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\compiler.py:1822: in execute_sql
+    cursor.execute(sql, params)
+.tools\python\Lib\site-packages\django\db\backends\utils.py:67: in execute
+    return self._execute_with_wrappers(
+.tools\python\Lib\site-packages\django\db\backends\utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C09]" time="0.059" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C10]" time="0.056" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C11]" time="0.056"><failure message="UnboundLocalError: cannot access local variable 'response_data' where it is not associated with a value">work\tests\test_campaigns.py:19: in test_create_campaign
+    response=request_view(factory,v.PromotionCreateView,'post',payload,data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:194: in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\promotions\views.py:656: in create
+    has_items = len(response_data.get("items", [])) &gt; 0
+                    ^^^^^^^^^^^^^
+E   UnboundLocalError: cannot access local variable 'response_data' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C12]" time="0.056"><failure message="django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent">.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   sqlite3.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent
+
+The above exception was the direct cause of the following exception:
+work\tests\test_campaigns.py:19: in test_create_campaign
+    response=request_view(factory,v.PromotionCreateView,'post',payload,data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:194: in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\promotions\views.py:330: in create
+    promotion = Promotion.objects.create(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:658: in create
+    obj.save(force_insert=True, using=self.db)
+.tools\python\Lib\site-packages\django\db\models\base.py:814: in save
+    self.save_base(
+.tools\python\Lib\site-packages\django\db\models\base.py:877: in save_base
+    updated = self._save_table(
+.tools\python\Lib\site-packages\django\db\models\base.py:1020: in _save_table
+    results = self._do_insert(
+.tools\python\Lib\site-packages\django\db\models\base.py:1061: in _do_insert
+    return manager._insert(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\compiler.py:1822: in execute_sql
+    cursor.execute(sql, params)
+.tools\python\Lib\site-packages\django\db\backends\utils.py:67: in execute
+    return self._execute_with_wrappers(
+.tools\python\Lib\site-packages\django\db\backends\utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C13]" time="0.057" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C14]" time="0.056" /><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C15]" time="0.056"><failure message="AssertionError: Rejected request left an orphan promotion row&#10;assert 2 == 1&#10; +  where 2 = count()&#10; +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt;.count&#10; +      where &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt; = Promotion.objects">work\tests\test_campaigns.py:22: in test_create_campaign
+    assert Promotion.objects.count()==before,'Rejected request left an orphan promotion row'
+E   AssertionError: Rejected request left an orphan promotion row
+E   assert 2 == 1
+E    +  where 2 = count()
+E    +    where count = &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt;.count
+E    +      where &lt;django.db.models.manager.Manager object at 0x00000281CDF2D310&gt; = Promotion.objects</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_create_campaign[PR-C16]" time="0.056"><failure message="django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent">.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   sqlite3.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent
+
+The above exception was the direct cause of the following exception:
+work\tests\test_campaigns.py:19: in test_create_campaign
+    response=request_view(factory,v.PromotionCreateView,'post',payload,data.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:194: in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\promotions\views.py:330: in create
+    promotion = Promotion.objects.create(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:658: in create
+    obj.save(force_insert=True, using=self.db)
+.tools\python\Lib\site-packages\django\db\models\base.py:814: in save
+    self.save_base(
+.tools\python\Lib\site-packages\django\db\models\base.py:877: in save_base
+    updated = self._save_table(
+.tools\python\Lib\site-packages\django\db\models\base.py:1020: in _save_table
+    results = self._do_insert(
+.tools\python\Lib\site-packages\django\db\models\base.py:1061: in _do_insert
+    return manager._insert(
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1805: in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\compiler.py:1822: in execute_sql
+    cursor.execute(sql, params)
+.tools\python\Lib\site-packages\django\db\backends\utils.py:67: in execute
+    return self._execute_with_wrappers(
+.tools\python\Lib\site-packages\django\db\backends\utils.py:80: in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\utils.py:84: in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\utils.py:91: in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+.tools\python\Lib\site-packages\django\db\backends\utils.py:89: in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\backends\sqlite3\base.py:328: in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   django.db.utils.IntegrityError: NOT NULL constraint failed: promotions_promotion.discount_percent</failure></testcase><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B01]" time="0.060" /><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B02]" time="0.056" /><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B03]" time="0.052" /><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B04]" time="0.055" /><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B05]" time="0.053" /><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B06]" time="0.053" /><testcase classname="work.tests.test_campaigns" name="test_bulk_activity_promotions[PR-B07]" time="0.053" /><testcase classname="work.tests.test_campaigns" name="test_campaign_grouping[PR-G01]" time="0.060" /><testcase classname="work.tests.test_campaigns" name="test_campaign_grouping[PR-G02]" time="0.064" /><testcase classname="work.tests.test_campaigns" name="test_campaign_grouping[PR-G03]" time="0.060" /><testcase classname="work.tests.test_campaigns" name="test_campaign_grouping[PR-G04]" time="0.063" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-01]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-02]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-03]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-04]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-05]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-06]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-07]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-08]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-09]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-10]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-11]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-12]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-13]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-14]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-15]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-16]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelListView-17]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelByCityView-01]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelByCityView-02]" time="0.079"><failure message="django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.">work\tests\test_filters.py:84: in test_list_parameter_robustness
+    response=request_view(factory,getattr(MODULES[app],name),payload=payload,user=data.user,**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:643: in list
+    return self.get_paginated_response(serializer.data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:182: in get_paginated_response
+    return self.paginator.get_paginated_response(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:126: in get_paginated_response
+    total_count = Hotel.objects.filter(**self.filters).count()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1436: in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1454: in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+.tools\python\Lib\site-packages\django\db\models\query.py:1461: in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1546: in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1577: in _add_q
+    child_clause, needed_inner = self.build_filter(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1492: in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1313: in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1357: in try_transform
+    raise FieldError(
+E   django.core.exceptions.FieldError: Unsupported lookup 'icontains' for ForeignKey or join on the field not permitted.</failure></testcase><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelByCityView-03]" time="0.079"><failure message="django.core.exceptions.FieldError: Cannot resolve keyword 'weighted_score' into field. Choices are: amenitiesAndFacilities, avg_star, best_comment, city, city_id, created_at, description, facilities, hotel_staffs, id, images, lat, lng, location, locationInfo, min_price, mostFeature, name, nearbyLocation, owner, owner_id, regulation, review_count, rooms, total_click, total_negative, total_neutral, total_positive, total_weighted_score, travel_guides, updated_at, usefulInformation, user_hotel_inter...&#10;[truncated; full report in element text]">work\tests\test_filters.py:84: in test_list_parameter_robustness
+    response=request_view(factory,getattr(MODULES[app],name),payload=payload,user=data.user,**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:640: in list
+    queryset = self.get_queryset()
+               ^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:630: in get_queryset
+    return Hotel.objects.filter(city_id=city_id).order_by("-weighted_score")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1659: in order_by
+    obj.query.add_ordering(*field_names)
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:2222: in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1725: in names_to_path
+    raise FieldError(
+E   django.core.exceptions.FieldError: Cannot resolve keyword 'weighted_score' into field. Choices are: amenitiesAndFacilities, avg_star, best_comment, city, city_id, created_at, description, facilities, hotel_staffs, id, images, lat, lng, location, locationInfo, min_price, mostFeature, name, nearbyLocation, owner, owner_id, regulation, review_count, rooms, total_click, total_negative, total_neutral, total_positive, total_weighted_score, travel_guides, updated_at, usefulInformation, user_hotel_interactions, withUs</failure></testcase><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelSearchView-01]" time="0.063"><failure message="django.core.exceptions.ImproperlyConfigured: Field name `weighted_score` is not valid for model `Hotel` in `hotels.serializers.HotelSearchSerializer`.">work\tests\test_filters.py:84: in test_list_parameter_robustness
+    response=request_view(factory,getattr(MODULES[app],name),payload=payload,user=data.user,**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:684: in list
+    "data": serializer.data,
+            ^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:795: in data
+    ret = super().data
+          ^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:249: in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:714: in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:523: in to_representation
+    for field in fields:
+                 ^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:384: in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\utils\functional.py:57: in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:372: in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:1103: in get_fields
+    field_class, field_kwargs = self.build_field(
+.tools\python\Lib\site-packages\rest_framework\serializers.py:1249: in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:1367: in build_unknown_field
+    raise ImproperlyConfigured(
+E   django.core.exceptions.ImproperlyConfigured: Field name `weighted_score` is not valid for model `Hotel` in `hotels.serializers.HotelSearchSerializer`.</failure></testcase><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[HO-Q-HotelSearchView-02]" time="0.061"><failure message="django.core.exceptions.ImproperlyConfigured: Field name `weighted_score` is not valid for model `Hotel` in `hotels.serializers.HotelSearchSerializer`.">work\tests\test_filters.py:84: in test_list_parameter_robustness
+    response=request_view(factory,getattr(MODULES[app],name),payload=payload,user=data.user,**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\hotels\views.py:684: in list
+    "data": serializer.data,
+            ^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:795: in data
+    ret = super().data
+          ^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:249: in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:714: in to_representation
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:523: in to_representation
+    for field in fields:
+                 ^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:384: in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\utils\functional.py:57: in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:372: in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:1103: in get_fields
+    field_class, field_kwargs = self.build_field(
+.tools\python\Lib\site-packages\rest_framework\serializers.py:1249: in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\serializers.py:1367: in build_unknown_field
+    raise ImproperlyConfigured(
+E   django.core.exceptions.ImproperlyConfigured: Field name `weighted_score` is not valid for model `Hotel` in `hotels.serializers.HotelSearchSerializer`.</failure></testcase><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-01]" time="0.071" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-02]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-03]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-04]" time="0.089" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-05]" time="0.124" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-06]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-07]" time="0.091" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-08]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-09]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomListView-10]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-01]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-02]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-03]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-04]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-05]" time="0.071" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-06]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-07]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-08]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-09]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-10]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-11]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-12]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-13]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-14]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-15]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-16]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-17]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-18]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAdminListView-19]" time="0.079" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomSearchView-01]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomSearchView-02]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomSearchView-03]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomSearchView-04]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomSearchView-05]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomSearchView-06]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAmenityListView-01]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[RO-Q-RoomAmenityListView-02]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[BO-Q-BookingViewSet-01]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[BO-Q-BookingViewSet-02]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[BO-Q-BookingViewSet-03]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[BO-Q-RefundPolicyViewSet-01]" time="0.071" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[BO-Q-RefundPolicyViewSet-02]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[BO-Q-RefundPolicyViewSet-03]" time="0.070" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-01]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-02]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-03]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-04]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-05]" time="0.071" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-06]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-07]" time="0.085" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-08]" time="0.068"><failure message="django.core.exceptions.FieldError: Unsupported lookup 'service_ref_id' for ForeignKey or join on the field not permitted.">work\tests\test_filters.py:84: in test_list_parameter_robustness
+    response=request_view(factory,getattr(MODULES[app],name),payload=payload,user=data.user,**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\mixins.py:38: in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:3191: in get_queryset
+    queryset = queryset.filter(query_filter)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1436: in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1454: in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+.tools\python\Lib\site-packages\django\db\models\query.py:1461: in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1546: in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1577: in _add_q
+    child_clause, needed_inner = self.build_filter(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1405: in build_filter
+    return self._add_q(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1577: in _add_q
+    child_clause, needed_inner = self.build_filter(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1492: in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1313: in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1357: in try_transform
+    raise FieldError(
+E   django.core.exceptions.FieldError: Unsupported lookup 'service_ref_id' for ForeignKey or join on the field not permitted.</failure></testcase><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-09]" time="0.091" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-10]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-11]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-12]" time="0.086" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-13]" time="0.090" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-14]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-15]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-16]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-17]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-18]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-19]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-20]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-21]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-22]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-23]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-24]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-25]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-26]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-27]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-28]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-29]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-30]" time="0.079" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-31]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-32]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-33]" time="0.071" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-34]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-35]" time="0.070" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-36]" time="0.089" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-37]" time="0.085" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-38]" time="0.087" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-39]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-40]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-41]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-42]" time="0.079" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-43]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-44]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-45]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-46]" time="0.113" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-47]" time="0.079" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListView-48]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-01]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-02]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-03]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-04]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-05]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-06]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-07]" time="0.071"><failure message="django.core.exceptions.FieldError: Unsupported lookup 'service_ref_id' for ForeignKey or join on the field not permitted.">work\tests\test_filters.py:84: in test_list_parameter_robustness
+    response=request_view(factory,getattr(MODULES[app],name),payload=payload,user=data.user,**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:3347: in list
+    queryset = self.get_queryset()
+               ^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:3264: in get_queryset
+    queryset = queryset.filter(booking__service_ref_id=booking__service_ref_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1436: in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\query.py:1454: in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+.tools\python\Lib\site-packages\django\db\models\query.py:1461: in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1546: in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1577: in _add_q
+    child_clause, needed_inner = self.build_filter(
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1492: in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1313: in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\db\models\sql\query.py:1357: in try_transform
+    raise FieldError(
+E   django.core.exceptions.FieldError: Unsupported lookup 'service_ref_id' for ForeignKey or join on the field not permitted.</failure></testcase><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-08]" time="0.070" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-09]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-10]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-11]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-12]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-13]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-14]" time="0.086" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-15]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-16]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-17]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-18]" time="0.069" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentListOverviewView-19]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentViewSet-01]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PA-Q-PaymentViewSet-02]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListCreateView-01]" time="0.091" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListCreateView-02]" time="0.097" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListCreateView-03]" time="0.094" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListCreateView-04]" time="0.097" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-01]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-02]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-03]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-04]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-05]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-06]" time="0.077" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-07]" time="0.072" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-08]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-09]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-10]" time="0.071" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-11]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-12]" time="0.070" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-13]" time="0.069" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-14]" time="0.070" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-PromotionListAdminView-15]" time="0.069" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-01]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-02]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-03]" time="0.085" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-04]" time="0.086" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-05]" time="0.074" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-06]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-07]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-RoomPromotionListAdminView-08]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-01]" time="0.079" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-02]" time="0.089" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-03]" time="0.088" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-04]" time="0.085" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-05]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-06]" time="0.073" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-07]" time="0.085" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-CarPromotionListAdminView-08]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-01]" time="0.086" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-02]" time="0.083" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-03]" time="0.088" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-04]" time="0.084" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-05]" time="0.088" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-06]" time="0.082" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-07]" time="0.090" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-FlightPromotionListAdminView-08]" time="0.098" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-01]" time="0.081" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-02]" time="0.089" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-03]" time="0.076" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-04]" time="0.075" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-05]" time="0.080" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-06]" time="0.070" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-07]" time="0.078" /><testcase classname="work.tests.test_filters" name="test_list_parameter_robustness[PR-Q-ActivityPromotionListAdminView-08]" time="0.078" /><testcase classname="work.tests.test_final_branches" name="test_hotel_image_updates[H-IM01]" time="0.054" /><testcase classname="work.tests.test_final_branches" name="test_hotel_image_updates[H-IM02]" time="0.054" /><testcase classname="work.tests.test_final_branches" name="test_hotel_image_updates[H-IM03]" time="0.052" /><testcase classname="work.tests.test_final_branches" name="test_cancel_service_resources[B-CX01]" time="0.069" /><testcase classname="work.tests.test_final_branches" name="test_cancel_service_resources[B-CX02]" time="0.064" /><testcase classname="work.tests.test_final_branches" name="test_cancel_service_resources[B-CX03]" time="0.064" /><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX01]" time="0.086" /><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX02]" time="0.074" /><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX03]" time="0.082"><failure message="AttributeError: 'NoneType' object has no attribute 'departure_time'">work\tests\test_final_branches.py:57: in test_flight_payment_itineraries
+    response=request_view(factory,pv.PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=data.payment.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:1133: in capture
+    message_admin = render_round_trip_admin(
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:986: in render_round_trip_admin
+    &lt;p class="font-semibold text-[12px] text-gray-900"&gt;{ret_first.departure_time.strftime("%Y-%m-%d %H:%M:%S")}&lt;/p&gt;
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'departure_time'</failure></testcase><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX04]" time="0.066"><failure message="AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `&lt;class 'NoneType'&gt;`">work\tests\test_final_branches.py:57: in test_flight_payment_itineraries
+    response=request_view(factory,pv.PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=data.payment.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:511: in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:423: in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `&lt;class 'NoneType'&gt;`</failure></testcase><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX05]" time="0.080" /><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX06]" time="0.068" /><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX07]" time="0.076" /><testcase classname="work.tests.test_final_branches" name="test_flight_payment_itineraries[P-FX08]" time="0.067"><failure message="AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `&lt;class 'NoneType'&gt;`">work\tests\test_final_branches.py:57: in test_flight_payment_itineraries
+    response=request_view(factory,pv.PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=data.payment.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:511: in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:423: in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `&lt;class 'NoneType'&gt;`</failure></testcase><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG01]" time="0.051"><failure message="ValueError: invalid literal for int() with base 10: 'bad'">work\tests\test_final_branches.py:63: in test_payment_pagination_boundaries
+    response=request_view(factory,pv.PaymentListView,payload={key:value})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\generic\base.py:104: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\generics.py:203: in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\mixins.py:38: in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:3220: in get_queryset
+    paginator = Paginator(queryset.distinct(), page_size)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\core\paginator.py:35: in __init__
+    self.per_page = int(per_page)
+                    ^^^^^^^^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'bad'</failure></testcase><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG02]" time="0.057" /><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG03]" time="0.054" /><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG04]" time="0.055" /><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG05]" time="0.058" /><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG06]" time="0.059" /><testcase classname="work.tests.test_final_branches" name="test_payment_pagination_boundaries[P-PG07]" time="0.057" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX01]" time="0.057" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX02]" time="0.053" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX03]" time="0.059" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX04]" time="0.060" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX05]" time="0.058" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX06]" time="0.058" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX07]" time="0.055" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX08]" time="0.057" /><testcase classname="work.tests.test_final_branches" name="test_room_filter_extra[R-QX09]" time="0.052" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R01]" time="0.053" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R02]" time="0.053" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R03]" time="0.048" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R04]" time="0.050" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R05]" time="0.049" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R06]" time="0.050" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R07]" time="0.052" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R08]" time="0.051" /><testcase classname="work.tests.test_lifecycle" name="test_refund_policy_decisions[B-R09]" time="0.051"><failure message="assert 150.0 == 100&#10; +  where 150.0 = calculate_refund_amount(&lt;Booking: Booking AGDC79E5C - 1&gt;)&#10; +    where calculate_refund_amount = &lt;bookings.views.BookingViewSet object at 0x00000281D13CC350&gt;.calculate_refund_amount&#10; +      where &lt;bookings.views.BookingViewSet object at 0x00000281D13CC350&gt; = BookingViewSet()&#10;[+1 more line; full report in element text]">work\tests\test_lifecycle.py:29: in test_refund_policy_decisions
+    assert BookingViewSet().calculate_refund_amount(data.booking)==expected
+E   assert 150.0 == 100
+E    +  where 150.0 = calculate_refund_amount(&lt;Booking: Booking AGDC79E5C - 1&gt;)
+E    +    where calculate_refund_amount = &lt;bookings.views.BookingViewSet object at 0x00000281D13CC350&gt;.calculate_refund_amount
+E    +      where &lt;bookings.views.BookingViewSet object at 0x00000281D13CC350&gt; = BookingViewSet()
+E    +    and   &lt;Booking: Booking AGDC79E5C - 1&gt; = namespace(user=&lt;CustomUser: tester&gt;, country=&lt;Country: Vietnam&gt;, city=&lt;City: Hanoi, Vietnam&gt;, hotel=&lt;Hotel: Lotus Hote...ion=&lt;Promotion: Summer (Chỗ ở)&gt;, now=datetime.datetime(2026, 11, 18, 15, 12, 19, 513007, tzinfo=datetime.timezone.utc)).booking</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_datetime_conversion[B-D01]" time="0.051" /><testcase classname="work.tests.test_lifecycle" name="test_datetime_conversion[B-D02]" time="0.055" /><testcase classname="work.tests.test_lifecycle" name="test_datetime_conversion[B-D03]" time="0.051" /><testcase classname="work.tests.test_lifecycle" name="test_datetime_conversion[B-D04]" time="0.044" /><testcase classname="work.tests.test_lifecycle" name="test_refund_gateway[B-G01]" time="0.053" /><testcase classname="work.tests.test_lifecycle" name="test_refund_gateway[B-G02]" time="0.052"><failure message="AssertionError: Expected VND 20, observed gateway amount 2000&#10;assert 2000 == 20">work\tests\test_lifecycle.py:51: in test_refund_gateway
+    assert refund.call_args.kwargs['amount']==20, f"Expected VND 20, observed gateway amount {refund.call_args.kwargs['amount']}"
+E   AssertionError: Expected VND 20, observed gateway amount 2000
+E   assert 2000 == 20</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_refund_gateway[B-G03]" time="0.056" /><testcase classname="work.tests.test_lifecycle" name="test_refund_gateway[B-G04]" time="0.049" /><testcase classname="work.tests.test_lifecycle" name="test_cancel_booking[B-C01]" time="0.054" /><testcase classname="work.tests.test_lifecycle" name="test_cancel_booking[B-C02]" time="0.062" /><testcase classname="work.tests.test_lifecycle" name="test_cancel_booking[B-C03]" time="0.054" /><testcase classname="work.tests.test_lifecycle" name="test_cancel_booking[B-C04]" time="0.053" /><testcase classname="work.tests.test_lifecycle" name="test_cancel_booking[B-C05]" time="0.053" /><testcase classname="work.tests.test_lifecycle" name="test_cancel_booking[B-C06]" time="0.056"><failure message="UnboundLocalError: cannot access local variable 'payments' where it is not associated with a value">work\tests\test_lifecycle.py:61: in test_cancel_booking
+    response=request_view(factory,BookingViewSet,'post',action='cancel_booking',pk=b.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\bookings\views.py:434: in cancel_booking
+    for payment in payments:
+                   ^^^^^^^^
+E   UnboundLocalError: cannot access local variable 'payments' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L01]" time="0.071" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L02]" time="0.066"><failure message="UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value">work\tests\test_lifecycle.py:91: in test_payment_lifecycle
+    response=request_view(factory,PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=p.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:1204: in capture
+    user_obj = booking.user
+               ^^^^^^^
+E   UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L03]" time="0.065" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L04]" time="0.064" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L05]" time="0.064" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L06]" time="0.069"><failure message="UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value">work\tests\test_lifecycle.py:91: in test_payment_lifecycle
+    response=request_view(factory,PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=p.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:1204: in capture
+    user_obj = booking.user
+               ^^^^^^^
+E   UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L07]" time="0.066" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L08]" time="0.062" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L09]" time="0.072" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L10]" time="0.067"><failure message="UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value">work\tests\test_lifecycle.py:91: in test_payment_lifecycle
+    response=request_view(factory,PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=p.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:1204: in capture
+    user_obj = booking.user
+               ^^^^^^^
+E   UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L11]" time="0.071" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L12]" time="0.064" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L13]" time="0.063" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L14]" time="0.057"><failure message="UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value">work\tests\test_lifecycle.py:91: in test_payment_lifecycle
+    response=request_view(factory,PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=p.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:1204: in capture
+    user_obj = booking.user
+               ^^^^^^^
+E   UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L15]" time="0.058" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L16]" time="0.068" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L17]" time="0.058" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L18]" time="0.056"><failure message="UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value">work\tests\test_lifecycle.py:91: in test_payment_lifecycle
+    response=request_view(factory,PaymentViewSet,'post',action='confirm_cash' if mode=='cash' else 'capture',pk=p.pk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work\tests\test_views.py:34: in request_view
+    return view(request,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\django\views\decorators\csrf.py:56: in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\viewsets.py:124: in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tools\python\Lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+.tools\python\Lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+.tools\python\Lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnitTest\SQA-main\SQA-main\agoda-be\payments\views.py:1204: in capture
+    user_obj = booking.user
+               ^^^^^^^
+E   UnboundLocalError: cannot access local variable 'booking' where it is not associated with a value</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L19]" time="0.059" /><testcase classname="work.tests.test_lifecycle" name="test_payment_lifecycle[P-L20]" time="0.058" /><testcase classname="work.tests.test_lifecycle" name="test_reject_cash_on_online[P-CASH01]" time="0.049" /><testcase classname="work.tests.test_lifecycle" name="test_payment_overview_totals[P-O01]" time="0.052"><failure message="AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]&#10;assert 200.0 == 300">work\tests\test_lifecycle.py:114: in test_payment_overview_totals
+    out=response.data['data'];assert out['total_revenue']==300,f"Expected total 300; observed {out['total_revenue']}; period revenues={out['revenues']}"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]
+E   assert 200.0 == 300</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_overview_totals[P-O02]" time="0.054"><failure message="AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]&#10;assert 200.0 == 300">work\tests\test_lifecycle.py:114: in test_payment_overview_totals
+    out=response.data['data'];assert out['total_revenue']==300,f"Expected total 300; observed {out['total_revenue']}; period revenues={out['revenues']}"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]
+E   assert 200.0 == 300</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_overview_totals[P-O03]" time="0.054"><failure message="AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]&#10;assert 200.0 == 300">work\tests\test_lifecycle.py:114: in test_payment_overview_totals
+    out=response.data['data'];assert out['total_revenue']==300,f"Expected total 300; observed {out['total_revenue']}; period revenues={out['revenues']}"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]
+E   assert 200.0 == 300</failure></testcase><testcase classname="work.tests.test_lifecycle" name="test_payment_overview_totals[P-O04]" time="0.052"><failure message="AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]&#10;assert 200.0 == 300">work\tests\test_lifecycle.py:114: in test_payment_overview_totals
+    out=response.data['data'];assert out['total_revenue']==300,f"Expected total 300; observed {out['total_revenue']}; period revenues={out['revenues']}"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected total 300; observed 200.0; period revenues=[100.0, 200.0]
+E   assert 200.0 == 300</failure></testcase><testcase classname="work.tests.test_models" name="test_hotel_models[H-M01]" time="0.055" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M02]" time="0.062" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M03]" time="0.050" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M04]" time="0.051" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M05]" time="0.057" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M06]" time="0.073" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M07]" time="0.052" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M08]" time="0.054" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M09]" time="0.059"><failure message="AssertionError: Expected lowest price 100, observed 200.0&#10;assert 200.0 == 100&#10; +  where 200.0 = &lt;Hotel: Lotus Hotel&gt;.min_price">work\tests\test_models.py:61: in test_hotel_models
+    h.refresh_from_db(); assert h.min_price==100, f'Expected lowest price 100, observed {h.min_price}'
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Expected lowest price 100, observed 200.0
+E   assert 200.0 == 100
+E    +  where 200.0 = &lt;Hotel: Lotus Hotel&gt;.min_price</failure></testcase><testcase classname="work.tests.test_models" name="test_hotel_models[H-M10]" time="0.052" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M11]" time="0.058" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M12]" time="0.063" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M13]" time="0.062" /><testcase classname="work.tests.test_models" name="test_hotel_models[H-M14]" time="0.054" /><testcase classname="work.tests.test_models" name="test_room_models[R-M01]" time="0.053" /><testcase classname="work.tests.test_models" name="test_room_models[R-M02]" time="0.055" /><testcase classname="work.tests.test_models" name="test_room_models[R-M03]" time="0.053" /><testcase classname="work.tests.test_models" name="test_room_models[R-M04]" time="0.055" /><testcase classname="work.tests.test_models" name="test_room_models[R-M05]" time="0.054" /><testcase classname="work.tests.test_models" name="test_room_models[R-M06]" time="0.054" /><testcase classname="work.tests.test_models" name="test_room_models[R-M07]" time="0.057" /><testcase classname="work.tests.test_models" name="test_room_models[R-M08]" time="0.055" /><testcase classname="work.tests.test_models" name="test_room_models[R-M09]" time="0.053" /><testcase classname="work.tests.test_models" name="test_room_models[R-M10]" time="0.054" /><testcase classname="work.tests.test_models" name="test_room_models[R-M11]" time="0.057" /><testcase classname="work.tests.test_models" name="test_room_models[R-M12]" time="0.055" /><testcase classname="work.tests.test_models" name="test_room_models[R-M13]" time="0.053" /><testcase classname="work.tests.test_models" name="test_room_models[R-M14]" time="0.054" /><testcase classname="work.tests.test_models" name="test_room_models[R-M15]" time="0.057" /><testcase classname="work.tests.test_models" name="test_room_models[R-M16]" time="0.062"><failure message="AssertionError: Expected effective discount 40, observed {'id': 2, 'title': 'Second', 'discount_percent': 20.0, 'discount_amount': 0.0, 'start_date': datetime.datetime(2026, 11, 17, 15, 12, 24, 229508, tzinfo=datetime.timezone.utc), 'end_date': datetime.datetime(2026, 11, 28, 15, 12, 24, 229508, tzinfo=datetime.timezone.utc)}&#10;assert 20.0 == 40">work\tests\test_models.py:129: in test_room_models
+    assert actual['discount_percent']==expected, f'Expected effective discount {expected}, observed {actual}'
+E   AssertionError: Expected effective discount 40, observed {'id': 2, 'title': 'Second', 'discount_percent': 20.0, 'discount_amount': 0.0, 'start_date': datetime.datetime(2026, 11, 17, 15, 12, 24, 229508, tzinfo=datetime.timezone.utc), 'end_date': datetime.datetime(2026, 11, 28, 15, 12, 24, 229508, tzinfo=datetime.timezone.utc)}
+E   assert 20.0 == 40</failure></testcase><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P01]" time="0.064" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P02]" time="0.061" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P03]" time="0.065" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P04]" time="0.071" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P05]" time="0.079" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P06]" time="0.069" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P07]" time="0.067" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P08]" time="0.092" /><testcase classname="work.tests.test_models" name="test_room_price_and_booking_sync[R-P09]" time="0.060"><failure message="AssertionError: Expected capped discount 200, observed 300.0&#10;assert 300.0 == 200&#10; +  where 300.0 = &lt;RoomBookingDetail: HotelBooking for AGD95EBAD | Deluxe x 1&gt;.discount_amount">work\tests\test_models.py:144: in test_room_price_and_booking_sync
+    assert detail.discount_amount==discount, f'Expected capped discount {discount}, observed {detail.discount_amount}'
+E   AssertionError: Expected capped discount 200, observed 300.0
+E   assert 300.0 == 200
+E    +  where 300.0 = &lt;RoomBookingDetail: HotelBooking for AGD95EBAD | Deluxe x 1&gt;.discount_amount</failure></testcase><testcase classname="work.tests.test_models" name="test_booking_models[B-M01]" time="0.052" /><testcase classname="work.tests.test_models" name="test_booking_models[B-M02]" time="0.056" /><testcase classname="work.tests.test_models" name="test_booking_models[B-M03]" time="0.054" /><testcase classname="work.tests.test_models" name="test_booking_models[B-M04]" time="0.053" /><testcase classname="work.tests.test_models" name="test_booking_models[B-M05]" time="0.061" /><testcase classname="work.tests.test_models" name="test_booking_models[B-M06]" time="0.048" /><testcase classname="work.tests.test_models" name="test_booking_models[B-M07]" time="0.054" /><testcase classname="work.tests.test_models" name="test_payment_model[P-M01]" time="0.051" /><testcase classname="work.tests.test_models" name="test_promotion_model_labels[PR-M01]" time="0.051" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F01]" time="0.066" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F02]" time="0.056" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F03]" time="0.061" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F04]" time="0.058" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F05]" time="0.055" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F06]" time="0.057" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F07]" time="0.055" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F08]" time="0.059" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F09]" time="0.055" /><testcase classname="work.tests.test_representation_filters" name="test_flight_promotion_filters[PR-F10]" time="0.061" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF01]" time="0.050" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF02]" time="0.053" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF03]" time="0.052" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF04]" time="0.057" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF05]" time="0.051" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF06]" time="0.054" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF07]" time="0.050" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF08]" time="0.056" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF09]" time="0.056" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF10]" time="0.052" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF11]" time="0.057" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF12]" time="0.059" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF13]" time="0.059" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF14]" time="0.062" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF15]" time="0.050" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF16]" time="0.056" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF17]" time="0.050" /><testcase classname="work.tests.test_representation_filters" name="test_activity_promotion_filter_contract[PR-AF18]" time="0.055" /><testcase classname="work.tests.test_representation_filters" name="test_actual_activity_promotion_contract[PR-ACTUAL01]" time="0.057"><failure message="AssertionError: Valid activity promotion is discarded because model has activity_date but serializer reads activity&#10;assert None is not None&#10; +  where None = to_representation(&lt;ActivityPromotion: Summer -&gt; ActivityDate: 1&gt;)&#10;[+2 more lines; full report in element text]">work\tests\test_representation_filters.py:57: in test_actual_activity_promotion_contract
+    assert ActivityPromotionSerializer().to_representation(obj) is not None,'Valid activity promotion is discarded because model has activity_date but serializer reads activity'
+E   AssertionError: Valid activity promotion is discarded because model has activity_date but serializer reads activity
+E   assert None is not None
+E    +  where None = to_representation(&lt;ActivityPromotion: Summer -&gt; ActivityDate: 1&gt;)
+E    +    where to_representation = ActivityPromotionSerializer():\n    id = IntegerField(label='ID', read_only=True)\n    promotion = PrimaryKeyRelatedFiel...False)\n    effective_discount_percent = SerializerMethodField()\n    effective_discount_amount = SerializerMethodField().to_representation
+E    +      where ActivityPromotionSerializer():\n    id = IntegerField(label='ID', read_only=True)\n    promotion = PrimaryKeyRelatedFiel...False)\n    effective_discount_percent = SerializerMethodField()\n    effective_discount_amount = SerializerMethodField() = ActivityPromotionSerializer()</failure></testcase><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT01]" time="0.056" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT02]" time="0.067" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT03]" time="0.056" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT04]" time="0.057" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT05]" time="0.057" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT06]" time="0.053" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT07]" time="0.053" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT08]" time="0.056" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT09]" time="0.061" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT10]" time="0.054" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT11]" time="0.050" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_sort_boundaries[PR-SORT12]" time="0.054" /><testcase classname="work.tests.test_scope_boundaries" name="test_hotel_city_boundary[H-CITY01]" time="0.056" /><testcase classname="work.tests.test_scope_boundaries" name="test_hotel_city_boundary[H-CITY02]" time="0.055" /><testcase classname="work.tests.test_scope_boundaries" name="test_hotel_city_boundary[H-CITY03]" time="0.059" /><testcase classname="work.tests.test_scope_boundaries" name="test_campaign_partial_success[PR-PARTIAL01]" time="0.058" /><testcase classname="work.tests.test_scope_boundaries" name="test_refund_missing_time[B-NULLTIME01]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_hotel_serializers[H-S01]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_hotel_serializers[H-S02]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_hotel_serializers[H-S03]" time="0.051" /><testcase classname="work.tests.test_serializers" name="test_hotel_serializers[H-S04]" time="0.058" /><testcase classname="work.tests.test_serializers" name="test_hotel_serializers[H-S05]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_room_creation_serializers[R-S01]" time="0.060" /><testcase classname="work.tests.test_serializers" name="test_room_creation_serializers[R-S02]" time="0.057" /><testcase classname="work.tests.test_serializers" name="test_room_creation_serializers[R-S03]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_room_creation_serializers[R-S04]" time="0.055" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V01]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V02]" time="0.053" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V03]" time="0.055" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V04]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V05]" time="0.057" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V06]" time="0.055" /><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V07]" time="0.058"><failure message="AssertionError: Expected accepted=False; observed errors={}&#10;assert True == False&#10; +  where True = is_valid()&#10; +    where is_valid = RoomBookingDetailCreateSerializer(data={'room': 1, 'check_in': datetime.datetime(2026, 11, 20, 15, 12, 28, 891196, tzi...ừ Room)', max_length=100, required=False)\n    room_count = IntegerField(help_text='Số lượng phòng đặt', required=False).is_valid">work\tests\test_serializers.py:62: in test_room_booking_validation
+    assert s.is_valid()==valid, f'Expected accepted={valid}; observed errors={s.errors}'
+E   AssertionError: Expected accepted=False; observed errors={}
+E   assert True == False
+E    +  where True = is_valid()
+E    +    where is_valid = RoomBookingDetailCreateSerializer(data={'room': 1, 'check_in': datetime.datetime(2026, 11, 20, 15, 12, 28, 891196, tzi...ừ Room)', max_length=100, required=False)\n    room_count = IntegerField(help_text='Số lượng phòng đặt', required=False).is_valid</failure></testcase><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V08]" time="0.056"><failure message="AssertionError: Expected accepted=False; observed errors={}&#10;assert True == False&#10; +  where True = is_valid()&#10; +    where is_valid = RoomBookingDetailCreateSerializer(data={'room': 1, 'check_in': datetime.datetime(2026, 11, 20, 15, 12, 28, 960874, tzi...ừ Room)', max_length=100, required=False)\n    room_count = IntegerField(help_text='Số lượng phòng đặt', required=False).is_valid">work\tests\test_serializers.py:62: in test_room_booking_validation
+    assert s.is_valid()==valid, f'Expected accepted={valid}; observed errors={s.errors}'
+E   AssertionError: Expected accepted=False; observed errors={}
+E   assert True == False
+E    +  where True = is_valid()
+E    +    where is_valid = RoomBookingDetailCreateSerializer(data={'room': 1, 'check_in': datetime.datetime(2026, 11, 20, 15, 12, 28, 960874, tzi...ừ Room)', max_length=100, required=False)\n    room_count = IntegerField(help_text='Số lượng phòng đặt', required=False).is_valid</failure></testcase><testcase classname="work.tests.test_serializers" name="test_room_booking_validation[R-V09]" time="0.063"><failure message="AssertionError: Expected accepted=False; observed errors={}&#10;assert True == False&#10; +  where True = is_valid()&#10; +    where is_valid = RoomBookingDetailCreateSerializer(data={'room': 1, 'check_in': datetime.datetime(2026, 11, 20, 15, 12, 29, 30017, tzin...ừ Room)', max_length=100, required=False)\n    room_count = IntegerField(help_text='Số lượng phòng đặt', required=False).is_valid">work\tests\test_serializers.py:62: in test_room_booking_validation
+    assert s.is_valid()==valid, f'Expected accepted={valid}; observed errors={s.errors}'
+E   AssertionError: Expected accepted=False; observed errors={}
+E   assert True == False
+E    +  where True = is_valid()
+E    +    where is_valid = RoomBookingDetailCreateSerializer(data={'room': 1, 'check_in': datetime.datetime(2026, 11, 20, 15, 12, 29, 30017, tzin...ừ Room)', max_length=100, required=False)\n    room_count = IntegerField(help_text='Số lượng phòng đặt', required=False).is_valid</failure></testcase><testcase classname="work.tests.test_serializers" name="test_booking_serializers[B-S01]" time="0.059" /><testcase classname="work.tests.test_serializers" name="test_booking_serializers[B-S02]" time="0.059" /><testcase classname="work.tests.test_serializers" name="test_booking_serializers[B-S03]" time="0.056" /><testcase classname="work.tests.test_serializers" name="test_booking_serializers[B-S04]" time="0.057" /><testcase classname="work.tests.test_serializers" name="test_booking_serializers[B-S05]" time="0.056" /><testcase classname="work.tests.test_serializers" name="test_booking_serializers[B-S06]" time="0.052" /><testcase classname="work.tests.test_serializers" name="test_booking_representation[B-SR01]" time="0.055" /><testcase classname="work.tests.test_serializers" name="test_booking_representation[B-SR02]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_booking_representation[B-SR03]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_booking_representation[B-SR04]" time="0.060" /><testcase classname="work.tests.test_serializers" name="test_booking_representation[B-SR05]" time="0.053" /><testcase classname="work.tests.test_serializers" name="test_payment_serializers[P-S01]" time="0.057" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S01]" time="0.053" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S02]" time="0.056" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S03]" time="0.053" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S04]" time="0.050" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S05]" time="0.051" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S06]" time="0.052" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S07]" time="0.052" /><testcase classname="work.tests.test_serializers" name="test_promotion_create_validation[PR-S08]" time="0.050" /><testcase classname="work.tests.test_serializers" name="test_promotion_representation[PR-SR01]" time="0.051" /><testcase classname="work.tests.test_serializers" name="test_promotion_representation[PR-SR02]" time="0.053" /><testcase classname="work.tests.test_serializers" name="test_promotion_representation[PR-SR03]" time="0.052" /><testcase classname="work.tests.test_serializers" name="test_promotion_representation[PR-SR04]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_promotion_representation[PR-SR05]" time="0.054" /><testcase classname="work.tests.test_serializers" name="test_effective_discounts[PR-D01]" time="0.049" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-list]" time="0.065" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-retrieve]" time="0.072" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-create]" time="0.065" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-invalid_create]" time="0.066" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-update]" time="0.068" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-invalid_update]" time="0.071" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-delete]" time="0.065" /><testcase classname="work.tests.test_views" name="test_crud_views[HO-CRUD01-missing]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-list]" time="0.070" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-retrieve]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-create]" time="0.065" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-invalid_create]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-update]" time="0.070" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-invalid_update]" time="0.068" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-delete]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD02-missing]" time="0.056"><failure message="AssertionError: {'error': 'No Room matches the given query.'}&#10;assert 400 == 404&#10; +  where 400 = &lt;Response status_code=400, &quot;text/html; charset=utf-8&quot;&gt;.status_code">work\tests\test_views.py:91: in test_crud_views
+    assert response.status_code==(404 if op=='missing' else 200),response.data
+E   AssertionError: {'error': 'No Room matches the given query.'}
+E   assert 400 == 404
+E    +  where 400 = &lt;Response status_code=400, "text/html; charset=utf-8"&gt;.status_code</failure></testcase><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-list]" time="0.065" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-retrieve]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-create]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-invalid_create]" time="0.079" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-update]" time="0.059" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-invalid_update]" time="0.083" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-delete]" time="0.059" /><testcase classname="work.tests.test_views" name="test_crud_views[RO-CRUD03-missing]" time="0.056" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-list]" time="0.071" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-retrieve]" time="0.072" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-create]" time="0.066" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-invalid_create]" time="0.062" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-update]" time="0.063" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-invalid_update]" time="0.062" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-delete]" time="0.075" /><testcase classname="work.tests.test_views" name="test_crud_views[PA-CRUD04-missing]" time="0.068" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD05-list]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD05-retrieve]" time="0.082" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD05-update]" time="0.063" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD05-invalid_update]" time="0.062" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD05-delete]" time="0.067" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD05-missing]" time="0.059" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-list]" time="0.069" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-retrieve]" time="0.068" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-create]" time="0.073" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-invalid_create]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-update]" time="0.063" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-invalid_update]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-delete]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD06-missing]" time="0.057" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-list]" time="0.067" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-retrieve]" time="0.069" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-create]" time="0.062" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-invalid_create]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-update]" time="0.062" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-invalid_update]" time="0.067" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-delete]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD07-missing]" time="0.066" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-list]" time="0.072" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-retrieve]" time="0.070" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-create]" time="0.067" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-invalid_create]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-update]" time="0.064" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-invalid_update]" time="0.065" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-delete]" time="0.070" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD08-missing]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-list]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-retrieve]" time="0.061" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-create]" time="0.070" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-invalid_create]" time="0.063" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-update]" time="0.067" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-invalid_update]" time="0.084" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-delete]" time="0.058" /><testcase classname="work.tests.test_views" name="test_crud_views[PR-CRUD09-missing]" time="0.058" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-list]" time="0.053" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-retrieve]" time="0.053" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-create]" time="0.054" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-invalid_create]" time="0.052" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-update]" time="0.074" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-invalid_update]" time="0.058" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-delete]" time="0.058" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD10-missing]" time="0.056" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-list]" time="0.064" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-retrieve]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-create]" time="0.058" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-invalid_create]" time="0.064" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-update]" time="0.064" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-invalid_update]" time="0.060" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-delete]" time="0.062" /><testcase classname="work.tests.test_views" name="test_crud_views[BO-CRUD11-missing]" time="0.061" /><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V01]" time="0.059" /><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V02]" time="0.063" /><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V03]" time="0.067"><failure message="AssertionError: Expected 400, observed 201; {'id': 2, 'booking': {'id': 1, 'user': {'id': 1, 'username': 'tester', 'email': 'guest@example.com', 'first_name': '', 'last_name': '', 'birthday': None, 'phone_number': None, 'gender': None, 'role': 'owner', 'avatar': None, 'is_active': True, 'date_joined': '2026-11-18T15:12:36.256890Z', 'hotel': None, 'manager': None, 'hotel_staffs': [], 'airline': None, 'flight_operation_manager': None, 'flight_staffs': [], 'driver_status': 'idle', 'driver_area': No...&#10;[+2 more lines; full report in element text]">work\tests\test_views.py:130: in test_payment_checkout
+    assert response.status_code==expected,f'Expected {expected}, observed {response.status_code}; {response.data}'
+E   AssertionError: Expected 400, observed 201; {'id': 2, 'booking': {'id': 1, 'user': {'id': 1, 'username': 'tester', 'email': 'guest@example.com', 'first_name': '', 'last_name': '', 'birthday': None, 'phone_number': None, 'gender': None, 'role': 'owner', 'avatar': None, 'is_active': True, 'date_joined': '2026-11-18T15:12:36.256890Z', 'hotel': None, 'manager': None, 'hotel_staffs': [], 'airline': None, 'flight_operation_manager': None, 'flight_staffs': [], 'driver_status': 'idle', 'driver_area': None, 'chat_id': None}, 'booking_code': 'AGD9849CD', 'service_type': 1, 'service_ref_ids': [], 'total_price': 100.0, 'discount_amount': 0.0, 'final_price': 100.0, 'refund_amount': 0.0, 'status': 1, 'payment_status': 1, 'created_at': '2026-11-18T15:12:36.258890Z', 'guest_info': None, 'room_details': None}, 'method': 1, 'amount': 100.0, 'status': 1, 'transaction_id': None, 'created_at': '2026-11-18T15:12:36.261891Z'}
+E   assert 201 == 400
+E    +  where 201 = &lt;Response status_code=201, "text/html; charset=utf-8"&gt;.status_code</failure></testcase><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V04]" time="0.057" /><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V05]" time="0.062" /><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V06]" time="0.051" /><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V07]" time="0.057"><failure message="AssertionError: {'checkout_session_id': 'cs_unit_test', 'checkout_url': 'http://localhost/checkout'}&#10;assert 200 == 400&#10; +  where 200 = &lt;Response status_code=200, &quot;text/html; charset=utf-8&quot;&gt;.status_code">work\tests\test_views.py:140: in test_payment_checkout
+    assert response.status_code==(200 if scenario=='checkout_ok' else 400),response.data
+E   AssertionError: {'checkout_session_id': 'cs_unit_test', 'checkout_url': 'http://localhost/checkout'}
+E   assert 200 == 400
+E    +  where 200 = &lt;Response status_code=200, "text/html; charset=utf-8"&gt;.status_code</failure></testcase><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V08]" time="0.056"><failure message="AssertionError: {'checkout_session_id': 'cs_unit_test', 'checkout_url': 'http://localhost/checkout'}&#10;assert 200 == 400&#10; +  where 200 = &lt;Response status_code=200, &quot;text/html; charset=utf-8&quot;&gt;.status_code">work\tests\test_views.py:140: in test_payment_checkout
+    assert response.status_code==(200 if scenario=='checkout_ok' else 400),response.data
+E   AssertionError: {'checkout_session_id': 'cs_unit_test', 'checkout_url': 'http://localhost/checkout'}
+E   assert 200 == 400
+E    +  where 200 = &lt;Response status_code=200, "text/html; charset=utf-8"&gt;.status_code</failure></testcase><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V09]" time="0.054"><failure message="AssertionError: {'checkout_session_id': 'cs_unit_test', 'checkout_url': 'http://localhost/checkout'}&#10;assert 200 == 400&#10; +  where 200 = &lt;Response status_code=200, &quot;text/html; charset=utf-8&quot;&gt;.status_code">work\tests\test_views.py:140: in test_payment_checkout
+    assert response.status_code==(200 if scenario=='checkout_ok' else 400),response.data
+E   AssertionError: {'checkout_session_id': 'cs_unit_test', 'checkout_url': 'http://localhost/checkout'}
+E   assert 200 == 400
+E    +  where 200 = &lt;Response status_code=200, "text/html; charset=utf-8"&gt;.status_code</failure></testcase><testcase classname="work.tests.test_views" name="test_payment_checkout[P-V10]" time="0.057"><failure message="AssertionError: Expected 400, observed 201; {'id': 2, 'booking': {'id': 1, 'user': {'id': 1, 'username': 'tester', 'email': 'guest@example.com', 'first_name': '', 'last_name': '', 'birthday': None, 'phone_number': None, 'gender': None, 'role': 'owner', 'avatar': None, 'is_active': True, 'date_joined': '2026-11-18T15:12:36.693407Z', 'hotel': None, 'manager': None, 'hotel_staffs': [], 'airline': None, 'flight_operation_manager': None, 'flight_staffs': [], 'driver_status': 'idle', 'driver_area': No...&#10;[+2 more lines; full report in element text]">work\tests\test_views.py:130: in test_payment_checkout
+    assert response.status_code==expected,f'Expected {expected}, observed {response.status_code}; {response.data}'
+E   AssertionError: Expected 400, observed 201; {'id': 2, 'booking': {'id': 1, 'user': {'id': 1, 'username': 'tester', 'email': 'guest@example.com', 'first_name': '', 'last_name': '', 'birthday': None, 'phone_number': None, 'gender': None, 'role': 'owner', 'avatar': None, 'is_active': True, 'date_joined': '2026-11-18T15:12:36.693407Z', 'hotel': None, 'manager': None, 'hotel_staffs': [], 'airline': None, 'flight_operation_manager': None, 'flight_staffs': [], 'driver_status': 'idle', 'driver_area': None, 'chat_id': None}, 'booking_code': 'AGD4BA98E', 'service_type': 1, 'service_ref_ids': [], 'total_price': 100.0, 'discount_amount': 0.0, 'final_price': 100.0, 'refund_amount': 0.0, 'status': 1, 'payment_status': 1, 'created_at': '2026-11-18T15:12:36.695910Z', 'guest_info': None, 'room_details': None}, 'method': 1, 'amount': 1.0, 'status': 1, 'transaction_id': None, 'created_at': '2026-11-18T15:12:36.699166Z'}
+E   assert 201 == 400
+E    +  where 201 = &lt;Response status_code=201, "text/html; charset=utf-8"&gt;.status_code</failure></testcase><testcase classname="work.tests.test_views" name="test_payment_email[P-E01]" time="0.048" /><testcase classname="work.tests.test_views" name="test_payment_email[P-E02]" time="0.054" /><testcase classname="work.tests.test_views" name="test_payment_email[P-E03]" time="0.054" /></testsuite></testsuites>

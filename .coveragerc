@@ -1,0 +1,19 @@
+[run]
+branch = True
+source =
+    hotels
+    rooms
+    bookings
+    payments
+    promotions
+omit =
+    */migrations/*
+    */tests.py
+    */tests/*
+    */admin.py
+    */apps.py
+    */urls.py
+    */__init__.py
+[report]
+show_missing = True
+precision = 2
