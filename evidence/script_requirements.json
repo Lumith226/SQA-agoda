@@ -1,0 +1,57 @@
+{
+  "test_functions": 52,
+  "cases": 589,
+  "outcomes": {
+    "FAIL": 57,
+    "PASS": 532
+  },
+  "exact_case_id_comments": 589,
+  "missing_docstrings": [],
+  "ambiguous_short_domain_variables": [],
+  "rollback_verified": 589,
+  "expected_outputs": "All cases declare explicit data/value/DB effects before execution; none has a status-only or generic fallback expectation.",
+  "requirements": [
+    {
+      "requirement": "Detailed English comments",
+      "status": "Implemented and inspected",
+      "evidence": "All 52 test functions document Arrange, Act, Assert/CheckDB and Rollback; every helper function has a purpose docstring. Compound one-line statements were expanded and formatted."
+    },
+    {
+      "requirement": "Corresponding Test Case ID comment",
+      "status": "Verified",
+      "evidence": "Exact # Test Case ID comments match all 589 executed cases in their own scripts; registries are grouped by test function."
+    },
+    {
+      "requirement": "Meaningful variable/function names",
+      "status": "Implemented and inspected",
+      "evidence": "Abbreviated domain variables were replaced with names such as hotel, room, booking, payment, serializer, sample_data and related_services. No one- or two-letter domain variable remains; standard imported module aliases are excluded from this check."
+    },
+    {
+      "requirement": "CheckDB",
+      "status": "Implemented and executed",
+      "evidence": "GET contracts compare independently selected IDs, record values and ordering. A second distinct fixture graph tests record exclusion. Reads/validation compare before/after snapshots. Invalid HTTP writes compare every persisted row/field; CRUD updates verify unchanged fields and foreign keys. Business discrepancies remain failed tests."
+    },
+    {
+      "requirement": "Rollback to the before-test data state",
+      "status": "Verified in isolated SQLite",
+      "evidence": "All 589 teardown audits compare model and automatic M2M table values before/after savepoint rollback; no setup/teardown errors were recorded. pytest-django provides an additional outer rollback."
+    }
+  ],
+  "scope_limit": "This verifies the selected unit scripts and isolated SQLite execution. It does not claim that every application requirement passes or that live services/MySQL/concurrency have been validated.",
+  "script_sha256": {
+    "conftest.py": "ae796e5faa7662e9aec4a0e07cfab88d178cbead5611d2ed667307f52975ca7c",
+    "contract_support.py": "f10a03179f36c6b9ca5ba27b3e1a0080c08b3b32ffa551f57e7aa7fc4c539608",
+    "expected_contracts.py": "91ab29b3604f4440590af41487864d7b9e9c84e7a27e4a12cb30285cc54e3a29",
+    "test_additional_views.py": "12319147ec5b24eb368db9af5ad2f271af8333cabfc339adc68b0bfc9777f82a",
+    "test_booking_services.py": "c059ae9b865ad73a5fc2cde9a0bd00f2a63bfc2ab4211a15a84bbfc0b72fd5e5",
+    "test_campaigns.py": "f584ad655469b686218ea5e855b0de9e4f3adbb382e50e6d286e2865632aba0a",
+    "test_filters.py": "b2d910a655b0c8cac15a01c653fc16a44699b4797b2e773b65322a8cc35e5318",
+    "test_final_branches.py": "5822a23d0b032ef16d8eed354418701a48f54377787d6980327c198cd993677e",
+    "test_lifecycle.py": "c8ff6221d39fe6b00d7ecdacb89a95f461b70e199598923d97b64c158febc11e",
+    "test_models.py": "50d0578fd0bb6f7be32044f5793fd3d6e8a19eae5e33cb1157da60e1a59aa481",
+    "test_representation_filters.py": "58b2356cf65b65d98f1cb71286c61f121f5838e4c82b211eb1318b8aff60a776",
+    "test_scope_boundaries.py": "b33943b85e4dd568e05a17da1e3b2e2dd02e0404e648533b8786f0d553d726f4",
+    "test_serializers.py": "df55e09696d0c8d57a1b8ef88e972672380c32905793e768b10eb39ed2d5a8a2",
+    "test_views.py": "9886340b6b7a40bd3a408a92161c1725399923a0368e291abbc1063a23fef0e5"
+  }
+}

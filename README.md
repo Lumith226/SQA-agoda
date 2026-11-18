@@ -4,9 +4,17 @@ This repository contains the executed pytest suite for five selected Agoda backe
 
 ## Results from 18 November 2026
 
-589 tests: 536 passed, 53 failed, no setup/teardown errors and no skipped tests. Failures are retained as executable defect regressions. Pytest returns exit code 1 because of these failures.
+589 tests: 532 passed, 57 failed, no setup/teardown errors and no skipped tests. Failures are retained as executable defect regressions. Pytest returns exit code 1 because of these failures.
 
 Statement coverage: 96.66%. Branch coverage: 91.64%. Combined coverage reported by pytest-cov: 95.45%. Counts are weighted by measured execution opportunities, not averaged across file percentages.
+
+## Revised script requirements and expected outputs
+
+Every executed case declares its expected data/value/database effects before calling the target. The Excel expected-output column includes actual expected IDs, field dictionaries, validation messages or computed monetary values instead of a status alone. HTTP GET checks select expected records independently from prepared DB rows, with a contrasting second fixture graph for filter tests. Invalid requests compare complete before/after rows; direct reads and validation audit non-mutation immediately. Rollback snapshots also include automatic M2M tables.
+
+All 52 test functions have structured Arrange, Act, Assert/CheckDB and Rollback documentation. The exact 589 Test Case ID comments are grouped by their corresponding functions. Abbreviated domain variables were renamed and compound statements expanded. See `evidence/script_requirements.json` for the five-criterion audit and script hashes. Compliance here concerns script implementation; existing application defects remain failed regressions.
+
+The revision found four additional failing flight-time filter cases. Frozen/split panes are removed from every worksheet.
 
 ## Run
 

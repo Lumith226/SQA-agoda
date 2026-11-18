@@ -1,13 +1,14 @@
 {
   "test_count": 589,
   "outcomes": {
-    "FAIL": 53,
-    "PASS": 536
+    "FAIL": 57,
+    "PASS": 532
   },
   "all_case_outcomes_reproduced": true,
   "coverage_totals_reproduced": true,
   "rollback_audits_verified": 589,
   "source_files_verified": 80,
-  "test_case_id_comments": "Exact per-case comments appended; AST verified unchanged.",
-  "excel_validation": "Native Excel full recalculation; all 589 rows reconciled to pytest; 536 PASS notes blank; 53 failures explained; no formula errors; eight sheets and evidence screenshots visually reviewed."
+  "test_case_id_comments": "Exact per-case comments verified; grouped by the corresponding test function.",
+  "excel_validation": "Native Excel full recalculation; every case reconciled to pytest; PASS reasons blank; failures explained; no formula errors; eight sheets, unfrozen views and evidence screenshots verified.",
+  "script_requirements_audit": "evidence/script_requirements.json"
 }
