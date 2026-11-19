@@ -1,0 +1,42 @@
+{
+  "cases": 150,
+  "exact_case_id_comments": 150,
+  "criteria": [
+    {
+      "requirement": "Detailed comments",
+      "evidence": "Postman scripts explain Arrange, Act, response assertions, CheckDB and full snapshot rollback."
+    },
+    {
+      "requirement": "Corresponding Test Case ID comment",
+      "evidence": "Every case has exact // Test Case ID comments in its BEGIN, API, DB observation and ROLLBACK scripts."
+    },
+    {
+      "requirement": "Meaningful naming",
+      "evidence": "Variables and functions describe case IDs, expected contracts, database audits, persisted rows and selections."
+    },
+    {
+      "requirement": "CheckDB",
+      "evidence": "All 218 API steps compare observed real ORM rows against independently declared contracts. Every permitted changed model has count/row/value or non-mutation checks."
+    },
+    {
+      "requirement": "Rollback",
+      "evidence": "All 150 explicit rollback requests match before/restored snapshots of all model and M2M rows, including failing cases."
+    }
+  ],
+  "script_sha256": {
+    "api_settings.py": "3c80b0c690be3ce7604654202e5b3e9dfabca5f6d1d3c337554e7a4b86d2ed1e",
+    "api_urls.py": "edf183f4d00cc61891d0026963a90acdf86b9c7b3e892bdd24c80fa10061261e",
+    "fixtures.py": "f6c5dbe900be4b4ba664e997e52878ab76a3c9e1a67cb82a554ac88a227a8578",
+    "server.py": "75cb1c411a11c5cacfdc5a594e2b848c13e61076d8ee475b719f5bbe5d6b331b",
+    "run_all.py": "baae5f6cbfc6a51c058f2426630c262e27665b806b4c6256c12db58fa2d21edb",
+    "build_cases.py": "290199d1c7b517f87459cee5a9839aebd5e899829ecc7547d8f8ef41f4d3da7e",
+    "enrich_contracts.py": "b9c256315bc30b4345d52b07b465e1a402a029bc73af6b03d9c136f801e84999",
+    "build_collection.py": "741fb1cf6c3dccfbae3ccee576fbde8a570d2defe6cde753eacc1f2a5b47ef04",
+    "postman_assertions.js": "65237c72f38ce51d0281e5644eef7ac09192fdeb779ad5be3e37b0fd53a317a5",
+    "cases.json": "73fc61a6493d898890bbca112c18f55eb2403e085bcbc21fb8e08b03b0e73c1e",
+    "inventory.py": "5bd6c40d944b6fcda5d52eae92812bb92bad78e0b724dc14dbc2ff81b60bae5c",
+    "endpoint_inventory.json": "5dbf087cba2dfa6cf6415d590817d9347c172af908316244f6973fc111d40ea8",
+    "collect_results.py": "66d0a7dcdfafdb7d52c94aa8608b07f171005c2c636897a53c5294ce377bb154",
+    "postman/Agoda_API_Tests.postman_collection.json": "93f2d1a67a570a3bf93959d02336263c14164cb23b82b34d7963b51886a984cf"
+  }
+}

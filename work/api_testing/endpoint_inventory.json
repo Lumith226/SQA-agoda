@@ -1,0 +1,994 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/hotels/hotels/",
+    "view": "HotelListView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hotels/hotels/create/",
+    "view": "HotelCreateView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hotels/hotels/<int:pk>/",
+    "view": "HotelDetailView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/hotels/hotels/<int:pk>/",
+    "view": "HotelDetailView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/hotels/hotels/<int:pk>/",
+    "view": "HotelDetailView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/hotels/hotels/<int:pk>/",
+    "view": "HotelDetailView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/hotels/hotels/<int:pk>/update/",
+    "view": "HotelUpdateView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/hotels/hotels/<int:pk>/update/",
+    "view": "HotelUpdateView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-update"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/hotels/hotels/<int:pk>/update/not-image/",
+    "view": "HotelUpdateViewNotImage",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-update-not-image"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/hotels/hotels/<int:pk>/update/not-image/",
+    "view": "HotelUpdateViewNotImage",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-update-not-image"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hotels/user-hotel-interaction/<int:hotel_id>/",
+    "view": "UserHotelInteractionDetailView",
+    "module": "hotels",
+    "action": null,
+    "name": "user-hotel-interaction-detail"
+  },
+  {
+    "method": "POST",
+    "path": "/api/hotels/user-hotel-interaction/upsert/",
+    "view": "UserHotelInteractionUpsertView",
+    "module": "hotels",
+    "action": null,
+    "name": "user-hotel-interaction-upsert"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/hotels/user-hotel-interaction/upsert/",
+    "view": "UserHotelInteractionUpsertView",
+    "module": "hotels",
+    "action": null,
+    "name": "user-hotel-interaction-upsert"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/hotels/user-hotel-interaction/upsert/",
+    "view": "UserHotelInteractionUpsertView",
+    "module": "hotels",
+    "action": null,
+    "name": "user-hotel-interaction-upsert"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/hotels/hotels/<int:pk>/delete/",
+    "view": "HotelDeleteView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-delete"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/hotels/hotel-images/<int:pk>/delete/",
+    "view": "HotelImageDeleteView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-image-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hotels/by-city/<int:city_id>/",
+    "view": "HotelByCityView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-by-city"
+  },
+  {
+    "method": "GET",
+    "path": "/api/hotels/search/",
+    "view": "HotelSearchView",
+    "module": "hotels",
+    "action": null,
+    "name": "hotel-search"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/rooms/",
+    "view": "RoomListView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/rooms-admin/",
+    "view": "RoomAdminListView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-admin-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/rooms/rooms/create/",
+    "view": "RoomCreateView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/rooms/<int:pk>/",
+    "view": "RoomDetailView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/rooms/rooms/<int:pk>/update/",
+    "view": "RoomUpdateView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/rooms/rooms/<int:pk>/update/",
+    "view": "RoomUpdateView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/rooms/rooms/<int:pk>/delete/",
+    "view": "RoomDeleteView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-delete"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/rooms/room-images/<int:pk>/delete/",
+    "view": "RoomImageDeleteView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-image-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/rooms/search/",
+    "view": "RoomSearchView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-search"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/rooms-booking/<int:pk>/",
+    "view": "RoomBookingDetailView",
+    "module": "rooms",
+    "action": null,
+    "name": "room-booking-detail"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/amenities/",
+    "view": "RoomAmenityListView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/rooms/amenities/create/",
+    "view": "RoomAmenityCreateView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/rooms/amenities/<int:pk>/",
+    "view": "RoomAmenityDetailView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/rooms/amenities/<int:pk>/",
+    "view": "RoomAmenityDetailView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/rooms/amenities/<int:pk>/",
+    "view": "RoomAmenityDetailView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/rooms/amenities/<int:pk>/",
+    "view": "RoomAmenityDetailView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/rooms/amenities/<int:pk>/update/",
+    "view": "RoomAmenityUpdateView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/rooms/amenities/<int:pk>/update/",
+    "view": "RoomAmenityUpdateView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/rooms/amenities/<int:pk>/delete/",
+    "view": "RoomAmenityDeleteView",
+    "module": "rooms",
+    "action": null,
+    "name": "amenities-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bookings/refund-policies/",
+    "view": "RefundPolicyViewSet",
+    "module": "bookings",
+    "action": "list",
+    "name": "refund-policy-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/bookings/refund-policies/",
+    "view": "RefundPolicyViewSet",
+    "module": "bookings",
+    "action": "create",
+    "name": "refund-policy-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bookings/refund-policies/<pk>/",
+    "view": "RefundPolicyViewSet",
+    "module": "bookings",
+    "action": "retrieve",
+    "name": "refund-policy-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/bookings/refund-policies/<pk>/",
+    "view": "RefundPolicyViewSet",
+    "module": "bookings",
+    "action": "update",
+    "name": "refund-policy-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/bookings/refund-policies/<pk>/",
+    "view": "RefundPolicyViewSet",
+    "module": "bookings",
+    "action": "partial_update",
+    "name": "refund-policy-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/bookings/refund-policies/<pk>/",
+    "view": "RefundPolicyViewSet",
+    "module": "bookings",
+    "action": "destroy",
+    "name": "refund-policy-detail"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bookings/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "list",
+    "name": "booking-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/bookings/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "create",
+    "name": "booking-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/bookings/<pk>/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "retrieve",
+    "name": "booking-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/bookings/<pk>/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "update",
+    "name": "booking-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/bookings/<pk>/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "partial_update",
+    "name": "booking-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/bookings/<pk>/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "destroy",
+    "name": "booking-detail"
+  },
+  {
+    "method": "POST",
+    "path": "/api/bookings/<pk>/cancel/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "cancel_booking",
+    "name": "booking-cancel-booking"
+  },
+  {
+    "method": "POST",
+    "path": "/api/bookings/<pk>/rebook/",
+    "view": "BookingViewSet",
+    "module": "bookings",
+    "action": "rebook_booking",
+    "name": "booking-rebook-booking"
+  },
+  {
+    "method": "GET",
+    "path": "/api/payments/payments/",
+    "view": "PaymentListView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/payments/payments/overview/",
+    "view": "PaymentListOverviewView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-overview-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/payments/payments/create/",
+    "view": "PaymentCreateView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/payments/payments/<int:pk>/",
+    "view": "PaymentDetailView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/payments/payments/<int:pk>/",
+    "view": "PaymentDetailView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/payments/payments/<int:pk>/",
+    "view": "PaymentDetailView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/payments/payments/<int:pk>/",
+    "view": "PaymentDetailView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/payments/payments/<int:pk>/update/",
+    "view": "PaymentUpdateView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/payments/payments/<int:pk>/update/",
+    "view": "PaymentUpdateView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/payments/payments/<int:pk>/delete/",
+    "view": "PaymentDeleteView",
+    "module": "payments",
+    "action": null,
+    "name": "payment-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/payments/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "list",
+    "name": "payment-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/payments/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "create",
+    "name": "payment-list"
+  },
+  {
+    "method": "GET",
+    "path": "/api/payments/<pk>/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "retrieve",
+    "name": "payment-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/payments/<pk>/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "update",
+    "name": "payment-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/payments/<pk>/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "partial_update",
+    "name": "payment-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/payments/<pk>/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "destroy",
+    "name": "payment-detail"
+  },
+  {
+    "method": "POST",
+    "path": "/api/payments/<pk>/capture/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "capture",
+    "name": "payment-capture"
+  },
+  {
+    "method": "POST",
+    "path": "/api/payments/<pk>/confirm_cash/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "confirm_cash",
+    "name": "payment-confirm-cash"
+  },
+  {
+    "method": "POST",
+    "path": "/api/payments/<pk>/pay/",
+    "view": "PaymentViewSet",
+    "module": "payments",
+    "action": "pay",
+    "name": "payment-pay"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/",
+    "view": "PromotionListCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-list-create"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/",
+    "view": "PromotionListCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-list-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/<int:pk>/",
+    "view": "PromotionDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/<int:pk>/",
+    "view": "PromotionDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/<int:pk>/",
+    "view": "PromotionDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/<int:pk>/",
+    "view": "PromotionDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-detail"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/create-details/",
+    "view": "PromotionCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/promotions-admin/",
+    "view": "PromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-list-admin"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/promotions-admin/",
+    "view": "PromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-list-admin"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/promotions/<int:pk>/update/",
+    "view": "PromotionUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/promotions/<int:pk>/update/",
+    "view": "PromotionUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/promotions/<int:pk>/delete/",
+    "view": "PromotionDeleteView",
+    "module": "promotions",
+    "action": null,
+    "name": "promotion-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/room-promotions/",
+    "view": "RoomPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/room-promotions/",
+    "view": "RoomPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/room-promotions/create/",
+    "view": "RoomPromotionAdminCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/room-promotions/<int:pk>/",
+    "view": "RoomPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/room-promotions/<int:pk>/",
+    "view": "RoomPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/room-promotions/<int:pk>/",
+    "view": "RoomPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/room-promotions/<int:pk>/",
+    "view": "RoomPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/room-promotions/<int:pk>/update/",
+    "view": "RoomPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/room-promotions/<int:pk>/update/",
+    "view": "RoomPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/room-promotions/<int:pk>/delete/",
+    "view": "RoomPromotionAdminDeleteView",
+    "module": "promotions",
+    "action": null,
+    "name": "room-promotion-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/car-promotions/",
+    "view": "CarPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/car-promotions/",
+    "view": "CarPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/car-promotions/create/",
+    "view": "CarPromotionAdminCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/car-promotions/<int:pk>/",
+    "view": "CarPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/car-promotions/<int:pk>/",
+    "view": "CarPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/car-promotions/<int:pk>/",
+    "view": "CarPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/car-promotions/<int:pk>/",
+    "view": "CarPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/car-promotions/<int:pk>/update/",
+    "view": "CarPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/car-promotions/<int:pk>/update/",
+    "view": "CarPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/car-promotions/<int:pk>/delete/",
+    "view": "CarPromotionAdminDeleteView",
+    "module": "promotions",
+    "action": null,
+    "name": "car-promotion-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/flight-promotions/",
+    "view": "FlightPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/flight-promotions/",
+    "view": "FlightPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/flight-promotions/create/",
+    "view": "FlightPromotionAdminCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-create"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/flight-promotions/<int:pk>/",
+    "view": "FlightPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/flight-promotions/<int:pk>/",
+    "view": "FlightPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/flight-promotions/<int:pk>/",
+    "view": "FlightPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/flight-promotions/<int:pk>/",
+    "view": "FlightPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/flight-promotions/<int:pk>/update/",
+    "view": "FlightPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/flight-promotions/<int:pk>/update/",
+    "view": "FlightPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/flight-promotions/<int:pk>/delete/",
+    "view": "FlightPromotionAdminDeleteView",
+    "module": "promotions",
+    "action": null,
+    "name": "flight-promotion-delete"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/activity-promotions/",
+    "view": "ActivityPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/activity-promotions/",
+    "view": "ActivityPromotionListAdminView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-list"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/activity-promotions/create/",
+    "view": "ActivityPromotionAdminCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-create"
+  },
+  {
+    "method": "POST",
+    "path": "/api/promotions/activity-promotions/create/bulk/",
+    "view": "ActivityPromotionAdminBulkCreateView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotions-create-bulk"
+  },
+  {
+    "method": "GET",
+    "path": "/api/promotions/activity-promotions/<int:pk>/",
+    "view": "ActivityPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/activity-promotions/<int:pk>/",
+    "view": "ActivityPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-detail"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/activity-promotions/<int:pk>/",
+    "view": "ActivityPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-detail"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/activity-promotions/<int:pk>/",
+    "view": "ActivityPromotionAdminDetailView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-detail"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/promotions/activity-promotions/<int:pk>/update/",
+    "view": "ActivityPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-update"
+  },
+  {
+    "method": "PATCH",
+    "path": "/api/promotions/activity-promotions/<int:pk>/update/",
+    "view": "ActivityPromotionAdminUpdateView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-update"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/activity-promotions/<int:pk>/delete/",
+    "view": "ActivityPromotionAdminDeleteView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-delete"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/promotions/activity-promotions/bulk-delete/",
+    "view": "ActivityPromotionAdminBulkDeleteView",
+    "module": "promotions",
+    "action": null,
+    "name": "activity-promotion-bulk-delete"
+  }
+]

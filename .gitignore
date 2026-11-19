@@ -5,3 +5,10 @@ __pycache__/
 .pytest_cache/
 work/evidence/
 .env
+
+node_modules/
+work/npm-cache/
+work/api_testing/evidence/
+work/api_testing/manual_evidence/
+work/api_testing/test_media/
+work/api_testing/reproduction_evidence/

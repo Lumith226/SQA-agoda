@@ -1,0 +1,2381 @@
+newman
+
+Agoda API Integration Tests - 150 Cases
+
+Folder Hotels / API-H-001 | List hotels with exact IDs and stored prices
+Sub-folder API-H-001 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-001 [200 OK, 1.04kB, 156ms]
+
+Sub-folder API-H-001-S01 | GET /api/hotels/hotels/
+  GET http://127.0.0.1:8765/api/hotels/hotels/ [200 OK, 2.6kB, 263ms]
+
+Sub-folder API-H-001-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-001 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-001 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-001 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-002 | Select hotel by matching name
+Sub-folder API-H-002 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-002 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-H-002-S01 | GET /api/hotels/hotels/?name=Lotus
+  GET http://127.0.0.1:8765/api/hotels/hotels/?name=Lotus [200 OK, 1.47kB, 43ms]
+
+Sub-folder API-H-002-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-002 [200 OK, 15.53kB, 3ms]
+
+Sub-folder API-H-002 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-002 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-003 | Exclude hotels for unmatched name
+Sub-folder API-H-003 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-003 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-H-003-S01 | GET /api/hotels/hotels/?name=NoSuchHotel
+  GET http://127.0.0.1:8765/api/hotels/hotels/?name=NoSuchHotel [200 OK, 331B, 38ms]
+
+Sub-folder API-H-003-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-003 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-H-003 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-003 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-004 | Filter by city foreign key
+Sub-folder API-H-004 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-004 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-H-004-S01 | GET /api/hotels/hotels/?cityId=1
+  GET http://127.0.0.1:8765/api/hotels/hotels/?cityId=1 [200 OK, 1.47kB, 42ms]
+
+Sub-folder API-H-004-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-004 [200 OK, 15.53kB, 4ms]
+
+Sub-folder API-H-004 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-004 [200 OK, 394B, 20ms]
+
+Folder Hotels / API-H-005 | Filter by owner foreign key
+Sub-folder API-H-005 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-005 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-H-005-S01 | GET /api/hotels/hotels/?ownerId=2
+  GET http://127.0.0.1:8765/api/hotels/hotels/?ownerId=2 [200 OK, 1.47kB, 39ms]
+
+Sub-folder API-H-005-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-005 [200 OK, 15.53kB, 3ms]
+
+Sub-folder API-H-005 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-005 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-006 | Sort by descending hotel name
+Sub-folder API-H-006 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-006 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-H-006-S01 | GET /api/hotels/hotels/?sort=name-desc
+  GET http://127.0.0.1:8765/api/hotels/hotels/?sort=name-desc [200 OK, 2.6kB, 41ms]
+
+Sub-folder API-H-006-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-006 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-006 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-006 [200 OK, 394B, 16ms]
+
+Folder Hotels / API-H-007 | Paginate with one record per page
+Sub-folder API-H-007 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-007 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-H-007-S01 | GET /api/hotels/hotels/?pageSize=1&current=1
+  GET http://127.0.0.1:8765/api/hotels/hotels/?pageSize=1&current=1 [200 OK, 1.47kB, 42ms]
+
+Sub-folder API-H-007-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-007 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-007 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-007 [200 OK, 394B, 17ms]
+
+Folder Hotels / API-H-008 | Return the second page without duplicating the first
+Sub-folder API-H-008 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-008 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-H-008-S01 | GET /api/hotels/hotels/?pageSize=1&current=2
+  GET http://127.0.0.1:8765/api/hotels/hotels/?pageSize=1&current=2 [200 OK, 1.47kB, 40ms]
+
+Sub-folder API-H-008-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-008 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-008 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-008 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-009 | Retrieve an existing hotel and its city
+Sub-folder API-H-009 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-009 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-H-009-S01 | GET /api/hotels/hotels/1/
+  GET http://127.0.0.1:8765/api/hotels/hotels/1/ [200 OK, 1.42kB, 40ms]
+
+Sub-folder API-H-009-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-009 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-009 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-009 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-010 | Reject a missing hotel ID
+Sub-folder API-H-010 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-010 [200 OK, 1.04kB, 35ms]
+
+Sub-folder API-H-010-S01 | GET /api/hotels/hotels/9999/
+  GET http://127.0.0.1:8765/api/hotels/hotels/9999/ [404 Not Found, 262B, 37ms]
+
+Sub-folder API-H-010-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-010 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-010 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-010 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-011 | Read public hotel details without authentication
+Sub-folder API-H-011 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-011 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-H-011-S01 | GET /api/hotels/hotels/1/
+  GET http://127.0.0.1:8765/api/hotels/hotels/1/ [200 OK, 1.42kB, 40ms]
+
+Sub-folder API-H-011-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-011 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-011 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-011 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-012 | Create hotel with an image and verify both rows
+Sub-folder API-H-012 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-012 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-H-012-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [200 OK, 763B, 40ms]
+
+Sub-folder API-H-012-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-012 [200 OK, 16.27kB, 1ms]
+
+Sub-folder API-H-012-S02 | GET /api/hotels/hotels/3/
+  GET http://127.0.0.1:8765/api/hotels/hotels/3/ [200 OK, 1.43kB, 39ms]
+
+Sub-folder API-H-012-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-012 [200 OK, 16.92kB, 2ms]
+
+Sub-folder API-H-012 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-012 [200 OK, 394B, 17ms]
+
+Folder Hotels / API-H-013 | Reject hotel creation without name
+Sub-folder API-H-013 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-013 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-H-013-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [400 Bad Request, 291B, 37ms]
+
+Sub-folder API-H-013-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-013 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-H-013 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-013 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-014 | Reject hotel creation without city
+Sub-folder API-H-014 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-014 [200 OK, 1.04kB, 37ms]
+
+Sub-folder API-H-014-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [400 Bad Request, 291B, 37ms]
+
+Sub-folder API-H-014-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-014 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-H-014 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-014 [200 OK, 394B, 17ms]
+
+Folder Hotels / API-H-015 | Reject nonexistent city foreign key
+Sub-folder API-H-015 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-015 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-H-015-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [400 Bad Request, 313B, 47ms]
+
+Sub-folder API-H-015-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-015 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-H-015 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-015 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-016 | Reject a name above its 255-character boundary
+Sub-folder API-H-016 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-016 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-H-016-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [400 Bad Request, 319B, 36ms]
+
+Sub-folder API-H-016-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-016 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-H-016 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-016 [200 OK, 394B, 22ms]
+
+Folder Hotels / API-H-017 | Require authentication for hotel creation
+Sub-folder API-H-017 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-017 [200 OK, 1.04kB, 34ms]
+
+Sub-folder API-H-017-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [401 Unauthorized, 290B, 42ms]
+
+Sub-folder API-H-017-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-017 [200 OK, 15.54kB, 3ms]
+
+Sub-folder API-H-017 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-017 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-018 | Reject a malformed JWT without inserting a hotel
+Sub-folder API-H-018 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-018 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-H-018-S01 | POST /api/hotels/hotels/create/
+  POST http://127.0.0.1:8765/api/hotels/hotels/create/ [401 Unauthorized, 416B, 33ms]
+
+Sub-folder API-H-018-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-018 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-H-018 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-018 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-019 | Persist PATCH and PUT on the exposed detail route
+Sub-folder API-H-019 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-019 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-H-019-S01 | PATCH /api/hotels/hotels/1/
+  PATCH http://127.0.0.1:8765/api/hotels/hotels/1/ [200 OK, 1.35kB, 42ms]
+
+Sub-folder API-H-019-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-019 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-H-019-S02 | PUT /api/hotels/hotels/1/
+  PUT http://127.0.0.1:8765/api/hotels/hotels/1/ [200 OK, 1.34kB, 40ms]
+
+Sub-folder API-H-019-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-019 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-H-019-S03 | GET /api/hotels/hotels/1/
+  GET http://127.0.0.1:8765/api/hotels/hotels/1/ [200 OK, 1.42kB, 40ms]
+
+Sub-folder API-H-019-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-019 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-019 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-019 [200 OK, 394B, 20ms]
+
+Folder Hotels / API-H-020 | Persist PUT and PATCH on the dedicated update route
+Sub-folder API-H-020 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-020 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-H-020-S01 | PUT /api/hotels/hotels/1/update/
+  PUT http://127.0.0.1:8765/api/hotels/hotels/1/update/ [200 OK, 756B, 37ms]
+
+Sub-folder API-H-020-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-020 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-H-020-S02 | PATCH /api/hotels/hotels/1/update/
+  PATCH http://127.0.0.1:8765/api/hotels/hotels/1/update/ [200 OK, 775B, 36ms]
+
+Sub-folder API-H-020-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-020 [200 OK, 15.49kB, 2ms]
+
+Sub-folder API-H-020 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-020 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-021 | Update without replacing the existing hotel image
+Sub-folder API-H-021 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-021 [200 OK, 1.04kB, 26ms]
+
+Sub-folder API-H-021-S01 | PATCH /api/hotels/hotels/1/update/not-image/
+  PATCH http://127.0.0.1:8765/api/hotels/hotels/1/update/not-image/ [200 OK, 758B, 41ms]
+
+Sub-folder API-H-021-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-021 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-H-021-S02 | PUT /api/hotels/hotels/1/update/not-image/
+  PUT http://127.0.0.1:8765/api/hotels/hotels/1/update/not-image/ [200 OK, 775B, 36ms]
+
+Sub-folder API-H-021-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-021 [200 OK, 15.59kB, 2ms]
+
+Sub-folder API-H-021 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-021 [200 OK, 394B, 22ms]
+
+Folder Hotels / API-H-022 | Reject invalid city update without partial changes
+Sub-folder API-H-022 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-022 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-H-022-S01 | PATCH /api/hotels/hotels/1/update/not-image/
+  PATCH http://127.0.0.1:8765/api/hotels/hotels/1/update/not-image/ [400 Bad Request, 319B, 38ms]
+
+Sub-folder API-H-022-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-022 [200 OK, 15.55kB, 3ms]
+
+Sub-folder API-H-022 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-022 [200 OK, 394B, 17ms]
+
+Folder Hotels / API-H-023 | Delete hotel and dependent rooms through dedicated route
+Sub-folder API-H-023 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-023 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-H-023-S01 | DELETE /api/hotels/hotels/1/delete/
+  DELETE http://127.0.0.1:8765/api/hotels/hotels/1/delete/ [204 No Content, 161B, 36ms]
+
+Sub-folder API-H-023-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-023 [200 OK, 13.97kB, 2ms]
+
+Sub-folder API-H-023-S02 | GET /api/hotels/hotels/1/
+  GET http://127.0.0.1:8765/api/hotels/hotels/1/ [404 Not Found, 262B, 34ms]
+
+Sub-folder API-H-023-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-023 [200 OK, 12.09kB, 2ms]
+
+Sub-folder API-H-023 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-023 [200 OK, 394B, 17ms]
+
+Folder Hotels / API-H-024 | Delete through the exposed detail route
+Sub-folder API-H-024 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-024 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-H-024-S01 | DELETE /api/hotels/hotels/1/
+  DELETE http://127.0.0.1:8765/api/hotels/hotels/1/ [204 No Content, 184B, 39ms]
+
+Sub-folder API-H-024-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-024 [200 OK, 13.96kB, 3ms]
+
+Sub-folder API-H-024 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-024 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-025 | Delete one image while preserving its hotel
+Sub-folder API-H-025 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-025 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-H-025-S01 | DELETE /api/hotels/hotel-images/1/delete/
+  DELETE http://127.0.0.1:8765/api/hotels/hotel-images/1/delete/ [204 No Content, 161B, 37ms]
+
+Sub-folder API-H-025-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-025 [200 OK, 15.46kB, 2ms]
+
+Sub-folder API-H-025 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-025 [200 OK, 394B, 20ms]
+
+Folder Hotels / API-H-026 | Select hotels within a requested city
+Sub-folder API-H-026 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-026 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-H-026-S01 | GET /api/hotels/by-city/1/
+  GET http://127.0.0.1:8765/api/hotels/by-city/1/ [200 OK, 1.47kB, 39ms]
+
+Sub-folder API-H-026-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-026 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-026 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-026 [200 OK, 394B, 18ms]
+
+Folder Hotels / API-H-027 | Search hotels and return an empty set for a miss
+Sub-folder API-H-027 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-027 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-H-027-S01 | GET /api/hotels/search/?hotel_name=Lotus
+  GET http://127.0.0.1:8765/api/hotels/search/?hotel_name=Lotus [500 Internal Server Error, 321B, 64ms]
+
+Sub-folder API-H-027-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-027 [200 OK, 20.21kB, 2ms]
+
+Sub-folder API-H-027-S02 | GET /api/hotels/search/?hotel_name=NoSuchHotel
+  GET http://127.0.0.1:8765/api/hotels/search/?hotel_name=NoSuchHotel [200 OK, 382B, 39ms]
+
+Sub-folder API-H-027-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-027 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-H-027 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-027 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-028 | Retrieve the authenticated user interaction
+Sub-folder API-H-028 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-028 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-H-028-S01 | GET /api/hotels/user-hotel-interaction/1/
+  GET http://127.0.0.1:8765/api/hotels/user-hotel-interaction/1/ [200 OK, 943B, 38ms]
+
+Sub-folder API-H-028-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-028 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-H-028 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-028 [200 OK, 394B, 17ms]
+
+Folder Hotels / API-H-029 | Upsert interaction counters and update aggregate hotel counters
+Sub-folder API-H-029 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-029 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-H-029-S01 | POST /api/hotels/user-hotel-interaction/upsert/
+  POST http://127.0.0.1:8765/api/hotels/user-hotel-interaction/upsert/ [200 OK, 450B, 40ms]
+
+Sub-folder API-H-029-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-029 [200 OK, 15.63kB, 2ms]
+
+Sub-folder API-H-029-S02 | GET /api/hotels/user-hotel-interaction/1/
+  GET http://127.0.0.1:8765/api/hotels/user-hotel-interaction/1/ [200 OK, 971B, 34ms]
+
+Sub-folder API-H-029-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-029 [200 OK, 15.6kB, 1ms]
+
+Sub-folder API-H-029 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-029 [200 OK, 394B, 19ms]
+
+Folder Hotels / API-H-030 | Reject missing upsert input and unroutable direct update methods
+Sub-folder API-H-030 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-H-030 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-H-030-S01 | POST /api/hotels/user-hotel-interaction/upsert/
+  POST http://127.0.0.1:8765/api/hotels/user-hotel-interaction/upsert/ [400 Bad Request, 253B, 37ms]
+
+Sub-folder API-H-030-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-030 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-H-030-S02 | PUT /api/hotels/user-hotel-interaction/upsert/
+  PUT http://127.0.0.1:8765/api/hotels/user-hotel-interaction/upsert/ [500 Internal Server Error, 321B, 42ms]
+
+Sub-folder API-H-030-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-030 [200 OK, 18.43kB, 2ms]
+
+Sub-folder API-H-030-S03 | PATCH /api/hotels/user-hotel-interaction/upsert/
+  PATCH http://127.0.0.1:8765/api/hotels/user-hotel-interaction/upsert/ [500 Internal Server Error, 321B, 43ms]
+
+Sub-folder API-H-030-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-H-030 [200 OK, 18.69kB, 2ms]
+
+Sub-folder API-H-030 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-H-030 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-001 | List rooms with exact inventory and nightly prices
+Sub-folder API-R-001 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-001 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-001-S01 | GET /api/rooms/rooms/
+  GET http://127.0.0.1:8765/api/rooms/rooms/ [200 OK, 1.87kB, 41ms]
+
+Sub-folder API-R-001-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-001 [200 OK, 15.53kB, 3ms]
+
+Sub-folder API-R-001 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-001 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-002 | Filter rooms by hotel
+Sub-folder API-R-002 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-002 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-R-002-S01 | GET /api/rooms/rooms/?hotel_id=1
+  GET http://127.0.0.1:8765/api/rooms/rooms/?hotel_id=1 [200 OK, 1.18kB, 41ms]
+
+Sub-folder API-R-002-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-002 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-002 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-002 [200 OK, 394B, 16ms]
+
+Folder Rooms / API-R-003 | Filter rooms by hotel owner
+Sub-folder API-R-003 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-003 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-003-S01 | GET /api/rooms/rooms/?owner_id=2
+  GET http://127.0.0.1:8765/api/rooms/rooms/?owner_id=2 [200 OK, 1.03kB, 44ms]
+
+Sub-folder API-R-003-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-003 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-003 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-003 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-004 | Filter overnight rooms at the exact lower price boundary
+Sub-folder API-R-004 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-004 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-R-004-S01 | GET /api/rooms/rooms-admin/?min_price_per_night=100
+  GET http://127.0.0.1:8765/api/rooms/rooms-admin/?min_price_per_night=100 [200 OK, 1.18kB, 42ms]
+
+Sub-folder API-R-004-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-004 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-004 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-004 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-005 | Filter day-use rooms by daily price
+Sub-folder API-R-005 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-005 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-R-005-S01 | GET /api/rooms/rooms-admin/?max_price_per_day=80
+  GET http://127.0.0.1:8765/api/rooms/rooms-admin/?max_price_per_day=80 [200 OK, 1.03kB, 42ms]
+
+Sub-folder API-R-005-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-005 [200 OK, 15.53kB, 3ms]
+
+Sub-folder API-R-005 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-005 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-006 | Exclude rooms without sufficient adult capacity
+Sub-folder API-R-006 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-006 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-006-S01 | GET /api/rooms/rooms/?adults=3
+  GET http://127.0.0.1:8765/api/rooms/rooms/?adults=3 [200 OK, 1.03kB, 39ms]
+
+Sub-folder API-R-006-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-006 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-006 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-006 [200 OK, 394B, 19ms]
+
+Folder Rooms / API-R-007 | Exclude zero-inventory rooms from the public list
+Sub-folder API-R-007 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-007 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-007-S01 | GET /api/rooms/rooms/
+  GET http://127.0.0.1:8765/api/rooms/rooms/ [200 OK, 1.03kB, 38ms]
+
+Sub-folder API-R-007-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-007 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-007 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-007 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-008 | Return both available and unavailable rooms to the admin list
+Sub-folder API-R-008 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-008 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-R-008-S01 | GET /api/rooms/rooms-admin/
+  GET http://127.0.0.1:8765/api/rooms/rooms-admin/ [200 OK, 1.87kB, 43ms]
+
+Sub-folder API-R-008-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-008 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-008 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-008 [200 OK, 394B, 19ms]
+
+Folder Rooms / API-R-009 | Paginate the room list without changing inventory
+Sub-folder API-R-009 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-009 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-R-009-S01 | GET /api/rooms/rooms/?pageSize=1&current=2
+  GET http://127.0.0.1:8765/api/rooms/rooms/?pageSize=1&current=2 [200 OK, 1.02kB, 47ms]
+
+Sub-folder API-R-009-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-009 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-009 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-009 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-010 | Retrieve room with nested hotel identity
+Sub-folder API-R-010 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-010 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-R-010-S01 | GET /api/rooms/rooms/1/
+  GET http://127.0.0.1:8765/api/rooms/rooms/1/ [200 OK, 1.1kB, 41ms]
+
+Sub-folder API-R-010-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-010 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-010 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-010 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-011 | Return the implemented missing-room error without DB changes
+Sub-folder API-R-011 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-011 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-011-S01 | GET /api/rooms/rooms/9999/
+  GET http://127.0.0.1:8765/api/rooms/rooms/9999/ [400 Bad Request, 242B, 38ms]
+
+Sub-folder API-R-011-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-011 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-011 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-011 [200 OK, 394B, 19ms]
+
+Folder Rooms / API-R-012 | Search available rooms by hotel name
+Sub-folder API-R-012 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-012 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-R-012-S01 | GET /api/rooms/rooms/search/?hotel_name=Lotus
+  GET http://127.0.0.1:8765/api/rooms/rooms/search/?hotel_name=Lotus [200 OK, 1.01kB, 38ms]
+
+Sub-folder API-R-012-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-012 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-012 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-012 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-013 | Reject room search without hotel_name
+Sub-folder API-R-013 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-013 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-R-013-S01 | GET /api/rooms/rooms/search/
+  GET http://127.0.0.1:8765/api/rooms/rooms/search/ [400 Bad Request, 258B, 34ms]
+
+Sub-folder API-R-013-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-013 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-013 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-013 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-014 | Create room and verify persisted hotel/price/inventory
+Sub-folder API-R-014 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-014 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-R-014-S01 | POST /api/rooms/rooms/create/
+  POST http://127.0.0.1:8765/api/rooms/rooms/create/ [200 OK, 697B, 41ms]
+
+Sub-folder API-R-014-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-014 [200 OK, 16.01kB, 2ms]
+
+Sub-folder API-R-014-S02 | GET /api/rooms/rooms/3/
+  GET http://127.0.0.1:8765/api/rooms/rooms/3/ [200 OK, 856B, 39ms]
+
+Sub-folder API-R-014-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-014 [200 OK, 16.42kB, 1ms]
+
+Sub-folder API-R-014 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-014 [200 OK, 394B, 20ms]
+
+Folder Rooms / API-R-015 | Reject room creation with nonexistent hotel
+Sub-folder API-R-015 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-015 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-015-S01 | POST /api/rooms/rooms/create/
+  POST http://127.0.0.1:8765/api/rooms/rooms/create/ [400 Bad Request, 313B, 37ms]
+
+Sub-folder API-R-015-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-015 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-015 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-015 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-016 | Reject room creation without room_type
+Sub-folder API-R-016 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-016 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-016-S01 | POST /api/rooms/rooms/create/
+  POST http://127.0.0.1:8765/api/rooms/rooms/create/ [400 Bad Request, 296B, 38ms]
+
+Sub-folder API-R-016-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-016 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-016 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-016 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-017 | Reject negative room inventory
+Sub-folder API-R-017 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-017 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-R-017-S01 | POST /api/rooms/rooms/create/
+  POST http://127.0.0.1:8765/api/rooms/rooms/create/ [500 Internal Server Error, 321B, 52ms]
+
+Sub-folder API-R-017-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-017 [200 OK, 22.4kB, 2ms]
+
+Sub-folder API-R-017 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-017 [200 OK, 394B, 21ms]
+
+Folder Rooms / API-R-018 | Reject nonnumeric nightly price
+Sub-folder API-R-018 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-018 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-R-018-S01 | POST /api/rooms/rooms/create/
+  POST http://127.0.0.1:8765/api/rooms/rooms/create/ [400 Bad Request, 306B, 44ms]
+
+Sub-folder API-R-018-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-018 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-R-018 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-018 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-019 | Persist room PATCH and PUT and verify subsequent reads
+Sub-folder API-R-019 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-019 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-019-S01 | PATCH /api/rooms/rooms/1/update/
+  PATCH http://127.0.0.1:8765/api/rooms/rooms/1/update/ [200 OK, 858B, 41ms]
+
+Sub-folder API-R-019-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-019 [200 OK, 15.48kB, 1ms]
+
+Sub-folder API-R-019-S02 | PUT /api/rooms/rooms/1/update/
+  PUT http://127.0.0.1:8765/api/rooms/rooms/1/update/ [200 OK, 858B, 41ms]
+
+Sub-folder API-R-019-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-019 [200 OK, 15.38kB, 2ms]
+
+Sub-folder API-R-019-S03 | GET /api/rooms/rooms/1/
+  GET http://127.0.0.1:8765/api/rooms/rooms/1/ [200 OK, 1.01kB, 37ms]
+
+Sub-folder API-R-019-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-019 [200 OK, 15.34kB, 3ms]
+
+Sub-folder API-R-019 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-019 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-020 | Reject an invalid hotel update atomically
+Sub-folder API-R-020 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-020 [200 OK, 1.04kB, 41ms]
+
+Sub-folder API-R-020-S01 | PATCH /api/rooms/rooms/1/update/
+  PATCH http://127.0.0.1:8765/api/rooms/rooms/1/update/ [400 Bad Request, 319B, 37ms]
+
+Sub-folder API-R-020-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-020 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-R-020 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-020 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-021 | Delete a room and its image/amenity/promotion dependents
+Sub-folder API-R-021 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-021 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-R-021-S01 | DELETE /api/rooms/rooms/1/delete/
+  DELETE http://127.0.0.1:8765/api/rooms/rooms/1/delete/ [204 No Content, 161B, 38ms]
+
+Sub-folder API-R-021-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-021 [200 OK, 14.79kB, 2ms]
+
+Sub-folder API-R-021 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-021 [200 OK, 394B, 20ms]
+
+Folder Rooms / API-R-022 | Delete room image without deleting the room
+Sub-folder API-R-022 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-022 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-R-022-S01 | DELETE /api/rooms/room-images/1/delete/
+  DELETE http://127.0.0.1:8765/api/rooms/room-images/1/delete/ [204 No Content, 161B, 39ms]
+
+Sub-folder API-R-022-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-022 [200 OK, 15.46kB, 2ms]
+
+Sub-folder API-R-022 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-022 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-023 | Filter amenities by room
+Sub-folder API-R-023 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-023 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-R-023-S01 | GET /api/rooms/amenities/?room_id=1
+  GET http://127.0.0.1:8765/api/rooms/amenities/?room_id=1 [200 OK, 1.3kB, 40ms]
+
+Sub-folder API-R-023-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-023 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-023 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-023 [200 OK, 394B, 19ms]
+
+Folder Rooms / API-R-024 | Create amenity and verify its foreign key
+Sub-folder API-R-024 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-024 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-R-024-S01 | POST /api/rooms/amenities/create/
+  POST http://127.0.0.1:8765/api/rooms/amenities/create/ [200 OK, 378B, 41ms]
+
+Sub-folder API-R-024-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-024 [200 OK, 15.69kB, 2ms]
+
+Sub-folder API-R-024-S02 | GET /api/rooms/amenities/3/
+  GET http://127.0.0.1:8765/api/rooms/amenities/3/ [200 OK, 1.25kB, 43ms]
+
+Sub-folder API-R-024-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-024 [200 OK, 15.79kB, 2ms]
+
+Sub-folder API-R-024 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-024 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-025 | Reject an amenity without its room
+Sub-folder API-R-025 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-025 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-R-025-S01 | POST /api/rooms/amenities/create/
+  POST http://127.0.0.1:8765/api/rooms/amenities/create/ [400 Bad Request, 298B, 39ms]
+
+Sub-folder API-R-025-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-025 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-R-025 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-025 [200 OK, 394B, 17ms]
+
+Folder Rooms / API-R-026 | Update an amenity through detail and dedicated routes
+Sub-folder API-R-026 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-026 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-026-S01 | PATCH /api/rooms/amenities/1/
+  PATCH http://127.0.0.1:8765/api/rooms/amenities/1/ [200 OK, 1.18kB, 39ms]
+
+Sub-folder API-R-026-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-026 [200 OK, 15.56kB, 2ms]
+
+Sub-folder API-R-026-S02 | PUT /api/rooms/amenities/1/
+  PUT http://127.0.0.1:8765/api/rooms/amenities/1/ [200 OK, 1.17kB, 39ms]
+
+Sub-folder API-R-026-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-026 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-R-026-S03 | PATCH /api/rooms/amenities/1/update/
+  PATCH http://127.0.0.1:8765/api/rooms/amenities/1/update/ [200 OK, 386B, 38ms]
+
+Sub-folder API-R-026-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-026 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-R-026-S04 | PUT /api/rooms/amenities/1/update/
+  PUT http://127.0.0.1:8765/api/rooms/amenities/1/update/ [200 OK, 384B, 39ms]
+
+Sub-folder API-R-026-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-026 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-R-026 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-026 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-027 | Delete amenities through both exposed delete routes
+Sub-folder API-R-027 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-027 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-R-027-S01 | DELETE /api/rooms/amenities/1/
+  DELETE http://127.0.0.1:8765/api/rooms/amenities/1/ [204 No Content, 184B, 36ms]
+
+Sub-folder API-R-027-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-027 [200 OK, 15.43kB, 2ms]
+
+Sub-folder API-R-027-S02 | DELETE /api/rooms/amenities/2/delete/
+  DELETE http://127.0.0.1:8765/api/rooms/amenities/2/delete/ [200 OK, 259B, 38ms]
+
+Sub-folder API-R-027-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-027 [200 OK, 15.19kB, 2ms]
+
+Sub-folder API-R-027 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-027 [200 OK, 394B, 19ms]
+
+Folder Rooms / API-R-028 | Reject an unknown amenity foreign key
+Sub-folder API-R-028 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-028 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-R-028-S01 | PATCH /api/rooms/amenities/1/update/
+  PATCH http://127.0.0.1:8765/api/rooms/amenities/1/update/ [400 Bad Request, 325B, 38ms]
+
+Sub-folder API-R-028-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-028 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-R-028 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-028 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-029 | Retrieve a real booking detail with computed price
+Sub-folder API-R-029 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-029 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-R-029-S01 | GET /api/rooms/rooms-booking/1/
+  GET http://127.0.0.1:8765/api/rooms/rooms-booking/1/ [200 OK, 1.75kB, 43ms]
+
+Sub-folder API-R-029-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-029 [200 OK, 16.07kB, 2ms]
+
+Sub-folder API-R-029 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-029 [200 OK, 394B, 18ms]
+
+Folder Rooms / API-R-030 | Reject an expired JWT before serving the room list
+Sub-folder API-R-030 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-R-030 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-R-030-S01 | GET /api/rooms/rooms/
+  GET http://127.0.0.1:8765/api/rooms/rooms/ [401 Unauthorized, 421B, 34ms]
+
+Sub-folder API-R-030-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-R-030 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-R-030 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-R-030 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-001 | List bookings in descending ID order
+Sub-folder API-B-001 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-001 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-B-001-S01 | GET /api/bookings/
+  GET http://127.0.0.1:8765/api/bookings/ [200 OK, 2.58kB, 42ms]
+
+Sub-folder API-B-001-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-001 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-001 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-001 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-002 | Filter bookings by authenticated owner email
+Sub-folder API-B-002 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-002 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-B-002-S01 | GET /api/bookings/?email=owner1@example.com
+  GET http://127.0.0.1:8765/api/bookings/?email=owner1@example.com [200 OK, 1.8kB, 39ms]
+
+Sub-folder API-B-002-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-002 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-002 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-002 [200 OK, 394B, 16ms]
+
+Folder Bookings / API-B-003 | Filter bookings by guest email
+Sub-folder API-B-003 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-003 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-003-S01 | GET /api/bookings/?email=guest2@example.com
+  GET http://127.0.0.1:8765/api/bookings/?email=guest2@example.com [200 OK, 1.12kB, 37ms]
+
+Sub-folder API-B-003-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-003 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-003 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-003 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-004 | Return no bookings for unmatched email
+Sub-folder API-B-004 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-004 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-B-004-S01 | GET /api/bookings/?email=absent@example.com
+  GET http://127.0.0.1:8765/api/bookings/?email=absent@example.com [200 OK, 344B, 34ms]
+
+Sub-folder API-B-004-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-004 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-004 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-004 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-005 | Filter by service type
+Sub-folder API-B-005 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-005 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-B-005-S01 | GET /api/bookings/?service_type=2
+  GET http://127.0.0.1:8765/api/bookings/?service_type=2 [200 OK, 1.12kB, 43ms]
+
+Sub-folder API-B-005-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-005 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-005 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-005 [200 OK, 394B, 17ms]
+
+Folder Bookings / API-B-006 | Paginate booking list with exact item totals
+Sub-folder API-B-006 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-006 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-B-006-S01 | GET /api/bookings/?pageSize=1&current=2
+  GET http://127.0.0.1:8765/api/bookings/?pageSize=1&current=2 [200 OK, 1.12kB, 38ms]
+
+Sub-folder API-B-006-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-006 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-006 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-006 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-007 | Retrieve booking prices and guest identity
+Sub-folder API-B-007 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-007 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-B-007-S01 | GET /api/bookings/1/
+  GET http://127.0.0.1:8765/api/bookings/1/ [200 OK, 991B, 38ms]
+
+Sub-folder API-B-007-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-007 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-007 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-007 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-008 | Reject missing booking ID
+Sub-folder API-B-008 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-008 [200 OK, 1.04kB, 34ms]
+
+Sub-folder API-B-008-S01 | GET /api/bookings/9999/
+  GET http://127.0.0.1:8765/api/bookings/9999/ [404 Not Found, 264B, 38ms]
+
+Sub-folder API-B-008-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-008 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-B-008 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-008 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-009 | Create booking with persisted guest information
+Sub-folder API-B-009 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-009 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-B-009-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [201 Created, 314B, 36ms]
+
+Sub-folder API-B-009-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-009 [200 OK, 15.97kB, 2ms]
+
+Sub-folder API-B-009-S02 | GET /api/bookings/4/
+  GET http://127.0.0.1:8765/api/bookings/4/ [200 OK, 992B, 38ms]
+
+Sub-folder API-B-009-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-009 [200 OK, 16.34kB, 2ms]
+
+Sub-folder API-B-009 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-009 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-010 | Create an anonymous guest booking without assigning an owner
+Sub-folder API-B-010 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-010 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-010-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [201 Created, 314B, 34ms]
+
+Sub-folder API-B-010-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-010 [200 OK, 15.98kB, 2ms]
+
+Sub-folder API-B-010 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-010 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-011 | Reject missing service type
+Sub-folder API-B-011 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-011 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-011-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 248B, 37ms]
+
+Sub-folder API-B-011-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-011 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-011 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-011 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-012 | Reject an unsupported service-type choice
+Sub-folder API-B-012 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-012 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-012-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 254B, 35ms]
+
+Sub-folder API-B-012-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-012 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-012 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-012 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-013 | Reject an invalid guest email atomically
+Sub-folder API-B-013 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-013 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-B-013-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 261B, 39ms]
+
+Sub-folder API-B-013-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-013 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-013 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-013 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-014 | Reject invalid room detail without leaving a booking row
+Sub-folder API-B-014 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-014 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-014-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 261B, 38ms]
+
+Sub-folder API-B-014-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-014 [200 OK, 15.8kB, 2ms]
+
+Sub-folder API-B-014 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-014 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-015 | Reject nonexistent car without a partial booking insert
+Sub-folder API-B-015 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-015 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-015-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 249B, 37ms]
+
+Sub-folder API-B-015-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-015 [200 OK, 15.8kB, 2ms]
+
+Sub-folder API-B-015 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-015 [200 OK, 394B, 17ms]
+
+Folder Bookings / API-B-016 | Reject nonexistent activity date atomically
+Sub-folder API-B-016 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-016 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-B-016-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 259B, 36ms]
+
+Sub-folder API-B-016-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-016 [200 OK, 15.8kB, 1ms]
+
+Sub-folder API-B-016 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-016 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-017 | Persist PATCH and PUT prices on an existing booking
+Sub-folder API-B-017 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-017 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-017-S01 | PATCH /api/bookings/1/
+  PATCH http://127.0.0.1:8765/api/bookings/1/ [200 OK, 991B, 40ms]
+
+Sub-folder API-B-017-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-017 [200 OK, 15.55kB, 1ms]
+
+Sub-folder API-B-017-S02 | PUT /api/bookings/1/
+  PUT http://127.0.0.1:8765/api/bookings/1/ [200 OK, 991B, 40ms]
+
+Sub-folder API-B-017-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-017 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-B-017 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-017 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-018 | Update guest fields while preserving the same guest row
+Sub-folder API-B-018 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-018 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-B-018-S01 | PATCH /api/bookings/1/
+  PATCH http://127.0.0.1:8765/api/bookings/1/ [200 OK, 998B, 39ms]
+
+Sub-folder API-B-018-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-018 [200 OK, 15.56kB, 2ms]
+
+Sub-folder API-B-018 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-018 [200 OK, 394B, 20ms]
+
+Folder Bookings / API-B-019 | Ignore client attempts to overwrite read-only booking status
+Sub-folder API-B-019 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-019 [200 OK, 1.04kB, 34ms]
+
+Sub-folder API-B-019-S01 | PATCH /api/bookings/1/
+  PATCH http://127.0.0.1:8765/api/bookings/1/ [200 OK, 991B, 38ms]
+
+Sub-folder API-B-019-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-019 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-B-019 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-019 [200 OK, 394B, 17ms]
+
+Folder Bookings / API-B-020 | Delete booking and cascade its payment and guest
+Sub-folder API-B-020 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-020 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-B-020-S01 | DELETE /api/bookings/1/
+  DELETE http://127.0.0.1:8765/api/bookings/1/ [204 No Content, 184B, 38ms]
+
+Sub-folder API-B-020-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-020 [200 OK, 15.03kB, 2ms]
+
+Sub-folder API-B-020-S02 | GET /api/bookings/1/
+  GET http://127.0.0.1:8765/api/bookings/1/ [404 Not Found, 264B, 34ms]
+
+Sub-folder API-B-020-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-020 [200 OK, 14.41kB, 2ms]
+
+Sub-folder API-B-020 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-020 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-021 | Cancel pending booking with no completed payment
+Sub-folder API-B-021 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-021 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-021-S01 | POST /api/bookings/1/cancel/
+  POST http://127.0.0.1:8765/api/bookings/1/cancel/ [500 Internal Server Error, 321B, 47ms]
+
+Sub-folder API-B-021-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-021 [200 OK, 18.17kB, 2ms]
+
+Sub-folder API-B-021 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-021 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-022 | Reject cancellation of an already cancelled booking
+Sub-folder API-B-022 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-022 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-022-S01 | POST /api/bookings/1/cancel/
+  POST http://127.0.0.1:8765/api/bookings/1/cancel/ [400 Bad Request, 254B, 37ms]
+
+Sub-folder API-B-022-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-022 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-B-022 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-022 [200 OK, 394B, 20ms]
+
+Folder Bookings / API-B-023 | Reject cancellation of a completed booking
+Sub-folder API-B-023 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-023 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-B-023-S01 | POST /api/bookings/1/cancel/
+  POST http://127.0.0.1:8765/api/bookings/1/cancel/ [400 Bad Request, 269B, 77ms]
+
+Sub-folder API-B-023-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-023 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-B-023 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-023 [200 OK, 394B, 22ms]
+
+Folder Bookings / API-B-024 | Reject rebooking before the old booking is cancelled
+Sub-folder API-B-024 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-024 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-B-024-S01 | POST /api/bookings/1/rebook/
+  POST http://127.0.0.1:8765/api/bookings/1/rebook/ [400 Bad Request, 277B, 36ms]
+
+Sub-folder API-B-024-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-024 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-B-024 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-024 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-025 | Rebook a cancelled stay, mark the old booking rebooked and preserve its prices
+Sub-folder API-B-025 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-025 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-B-025-S01 | POST /api/bookings/1/rebook/
+  POST http://127.0.0.1:8765/api/bookings/1/rebook/ [201 Created, 1.85kB, 46ms]
+
+Sub-folder API-B-025-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-025 [200 OK, 16.84kB, 2ms]
+
+Sub-folder API-B-025 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-025 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-026 | List and filter refund policies
+Sub-folder API-B-026 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-026 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-B-026-S01 | GET /api/bookings/refund-policies/
+  GET http://127.0.0.1:8765/api/bookings/refund-policies/ [200 OK, 855B, 36ms]
+
+Sub-folder API-B-026-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-026 [200 OK, 15.54kB, 1ms]
+
+Sub-folder API-B-026-S02 | GET /api/bookings/refund-policies/?service_type=1
+  GET http://127.0.0.1:8765/api/bookings/refund-policies/?service_type=1 [200 OK, 602B, 38ms]
+
+Sub-folder API-B-026-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-026 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-B-026 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-026 [200 OK, 394B, 18ms]
+
+Folder Bookings / API-B-027 | Create and retrieve a refund policy
+Sub-folder API-B-027 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-027 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-B-027-S01 | POST /api/bookings/refund-policies/
+  POST http://127.0.0.1:8765/api/bookings/refund-policies/ [201 Created, 528B, 38ms]
+
+Sub-folder API-B-027-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-027 [200 OK, 15.84kB, 2ms]
+
+Sub-folder API-B-027-S02 | GET /api/bookings/refund-policies/3/
+  GET http://127.0.0.1:8765/api/bookings/refund-policies/3/ [200 OK, 465B, 36ms]
+
+Sub-folder API-B-027-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-027 [200 OK, 16.09kB, 2ms]
+
+Sub-folder API-B-027 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-027 [200 OK, 394B, 19ms]
+
+Folder Bookings / API-B-028 | Persist PUT and PATCH refund-policy updates
+Sub-folder API-B-028 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-028 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-B-028-S01 | PATCH /api/bookings/refund-policies/1/
+  PATCH http://127.0.0.1:8765/api/bookings/refund-policies/1/ [200 OK, 533B, 37ms]
+
+Sub-folder API-B-028-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-028 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-B-028-S02 | PUT /api/bookings/refund-policies/1/
+  PUT http://127.0.0.1:8765/api/bookings/refund-policies/1/ [200 OK, 539B, 42ms]
+
+Sub-folder API-B-028-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-028 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-B-028 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-028 [200 OK, 394B, 17ms]
+
+Folder Bookings / API-B-029 | Delete refund policy without deleting its bookings
+Sub-folder API-B-029 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-029 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-B-029-S01 | DELETE /api/bookings/refund-policies/1/
+  DELETE http://127.0.0.1:8765/api/bookings/refund-policies/1/ [200 OK, 273B, 36ms]
+
+Sub-folder API-B-029-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-029 [200 OK, 15.3kB, 2ms]
+
+Sub-folder API-B-029 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-029 [200 OK, 394B, 17ms]
+
+Folder Bookings / API-B-030 | Reject malformed JSON before creating a booking
+Sub-folder API-B-030 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-B-030 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-B-030-S01 | POST /api/bookings/
+  POST http://127.0.0.1:8765/api/bookings/ [400 Bad Request, 279B, 36ms]
+
+Sub-folder API-B-030-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-B-030 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-B-030 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-B-030 [200 OK, 394B, 17ms]
+
+Folder Payments / API-P-001 | List payment amounts and booking identities
+Sub-folder API-P-001 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-001 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-001-S01 | GET /api/payments/payments/
+  GET http://127.0.0.1:8765/api/payments/payments/ [200 OK, 2.16kB, 41ms]
+
+Sub-folder API-P-001-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-001 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-001 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-001 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-002 | Select payments by booking ID
+Sub-folder API-P-002 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-002 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-002-S01 | GET /api/payments/?booking_id=1
+  GET http://127.0.0.1:8765/api/payments/?booking_id=1 [200 OK, 1.16kB, 54ms]
+
+Sub-folder API-P-002-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-002 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-P-002 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-002 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-003 | Return no payment for a booking without payment
+Sub-folder API-P-003 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-003 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-003-S01 | GET /api/payments/?booking_id=3
+  GET http://127.0.0.1:8765/api/payments/?booking_id=3 [200 OK, 247B, 44ms]
+
+Sub-folder API-P-003-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-003 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-P-003 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-003 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-004 | Filter administrative payments by method
+Sub-folder API-P-004 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-004 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-P-004-S01 | GET /api/payments/payments/?method=2
+  GET http://127.0.0.1:8765/api/payments/payments/?method=2 [200 OK, 1.25kB, 37ms]
+
+Sub-folder API-P-004-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-004 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-004 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-004 [200 OK, 394B, 20ms]
+
+Folder Payments / API-P-005 | Paginate administrative payment list
+Sub-folder API-P-005 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-005 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-005-S01 | GET /api/payments/payments/?pageSize=1&current=2
+  GET http://127.0.0.1:8765/api/payments/payments/?pageSize=1&current=2 [200 OK, 1.25kB, 43ms]
+
+Sub-folder API-P-005-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-005 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-005 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-005 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-006 | Retrieve payment via both detail routes
+Sub-folder API-P-006 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-006 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-P-006-S01 | GET /api/payments/1/
+  GET http://127.0.0.1:8765/api/payments/1/ [200 OK, 1.12kB, 40ms]
+
+Sub-folder API-P-006-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-006 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-006-S02 | GET /api/payments/payments/1/
+  GET http://127.0.0.1:8765/api/payments/payments/1/ [200 OK, 1.2kB, 40ms]
+
+Sub-folder API-P-006-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-006 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-006 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-006 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-007 | Reject missing payment ID
+Sub-folder API-P-007 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-007 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-007-S01 | GET /api/payments/9999/
+  GET http://127.0.0.1:8765/api/payments/9999/ [404 Not Found, 264B, 36ms]
+
+Sub-folder API-P-007-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-007 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-P-007 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-007 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-008 | Create online payment using the booking total by default
+Sub-folder API-P-008 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-008 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-P-008-S01 | POST /api/payments/
+  POST http://127.0.0.1:8765/api/payments/ [201 Created, 996B, 39ms]
+
+Sub-folder API-P-008-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-008 [200 OK, 15.68kB, 2ms]
+
+Sub-folder API-P-008 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-008 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-009 | Create cash payment with an explicit amount
+Sub-folder API-P-009 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-009 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-P-009-S01 | POST /api/payments/
+  POST http://127.0.0.1:8765/api/payments/ [201 Created, 995B, 42ms]
+
+Sub-folder API-P-009-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-009 [200 OK, 15.68kB, 2ms]
+
+Sub-folder API-P-009 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-009 [200 OK, 394B, 21ms]
+
+Folder Payments / API-P-010 | Reject payment creation without booking_id
+Sub-folder API-P-010 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-010 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-010-S01 | POST /api/payments/
+  POST http://127.0.0.1:8765/api/payments/ [400 Bad Request, 239B, 41ms]
+
+Sub-folder API-P-010-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-010 [200 OK, 15.52kB, 1ms]
+
+Sub-folder API-P-010 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-010 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-011 | Reject a payment with nonexistent booking
+Sub-folder API-P-011 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-011 [200 OK, 1.04kB, 34ms]
+
+Sub-folder API-P-011-S01 | POST /api/payments/
+  POST http://127.0.0.1:8765/api/payments/ [404 Not Found, 232B, 37ms]
+
+Sub-folder API-P-011-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-011 [200 OK, 15.52kB, 2ms]
+
+Sub-folder API-P-011 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-011 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-012 | Reject a duplicate payment for an already paid-linked booking
+Sub-folder API-P-012 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-012 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-P-012-S01 | POST /api/payments/
+  POST http://127.0.0.1:8765/api/payments/ [201 Created, 1.1kB, 38ms]
+
+Sub-folder API-P-012-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-012 [200 OK, 15.68kB, 2ms]
+
+Sub-folder API-P-012 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-012 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-013 | Create payment through the administrative serializer route
+Sub-folder API-P-013 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-013 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-P-013-S01 | POST /api/payments/payments/create/
+  POST http://127.0.0.1:8765/api/payments/payments/create/ [200 OK, 374B, 46ms]
+
+Sub-folder API-P-013-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-013 [200 OK, 15.7kB, 1ms]
+
+Sub-folder API-P-013 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-013 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-014 | Reject nonexistent administrative booking foreign key
+Sub-folder API-P-014 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-014 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-014-S01 | POST /api/payments/payments/create/
+  POST http://127.0.0.1:8765/api/payments/payments/create/ [400 Bad Request, 318B, 52ms]
+
+Sub-folder API-P-014-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-014 [200 OK, 15.54kB, 3ms]
+
+Sub-folder API-P-014 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-014 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-015 | Persist payment updates through router and administrative routes
+Sub-folder API-P-015 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-015 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-P-015-S01 | PATCH /api/payments/1/
+  PATCH http://127.0.0.1:8765/api/payments/1/ [200 OK, 1.12kB, 45ms]
+
+Sub-folder API-P-015-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-015 [200 OK, 15.55kB, 3ms]
+
+Sub-folder API-P-015-S02 | PUT /api/payments/1/
+  PUT http://127.0.0.1:8765/api/payments/1/ [200 OK, 1.12kB, 38ms]
+
+Sub-folder API-P-015-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-015 [200 OK, 15.54kB, 1ms]
+
+Sub-folder API-P-015-S03 | PATCH /api/payments/payments/1/
+  PATCH http://127.0.0.1:8765/api/payments/payments/1/ [200 OK, 1.12kB, 39ms]
+
+Sub-folder API-P-015-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-015 [200 OK, 15.56kB, 2ms]
+
+Sub-folder API-P-015-S04 | PUT /api/payments/payments/1/
+  PUT http://127.0.0.1:8765/api/payments/payments/1/ [200 OK, 1.12kB, 38ms]
+
+Sub-folder API-P-015-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-015 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-P-015-S05 | PATCH /api/payments/payments/1/update/
+  PATCH http://127.0.0.1:8765/api/payments/payments/1/update/ [200 OK, 390B, 35ms]
+
+Sub-folder API-P-015-S05 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-015 [200 OK, 15.56kB, 2ms]
+
+Sub-folder API-P-015-S06 | PUT /api/payments/payments/1/update/
+  PUT http://127.0.0.1:8765/api/payments/payments/1/update/ [200 OK, 390B, 37ms]
+
+Sub-folder API-P-015-S06 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-015 [200 OK, 15.56kB, 1ms]
+
+Sub-folder API-P-015 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-015 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-016 | Reject nonnumeric amount without overwriting payment
+Sub-folder API-P-016 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-016 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-016-S01 | PATCH /api/payments/payments/1/update/
+  PATCH http://127.0.0.1:8765/api/payments/payments/1/update/ [400 Bad Request, 306B, 40ms]
+
+Sub-folder API-P-016-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-016 [200 OK, 15.54kB, 1ms]
+
+Sub-folder API-P-016 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-016 [200 OK, 394B, 17ms]
+
+Folder Payments / API-P-017 | Delete payment through router and both administrative routes
+Sub-folder API-P-017 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-017 [200 OK, 1.04kB, 27ms]
+
+Sub-folder API-P-017-S01 | DELETE /api/payments/1/
+  DELETE http://127.0.0.1:8765/api/payments/1/ [204 No Content, 184B, 35ms]
+
+Sub-folder API-P-017-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-017 [200 OK, 15.4kB, 2ms]
+
+Sub-folder API-P-017-S02 | DELETE /api/payments/payments/2/
+  DELETE http://127.0.0.1:8765/api/payments/payments/2/ [204 No Content, 184B, 36ms]
+
+Sub-folder API-P-017-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-017 [200 OK, 15.11kB, 2ms]
+
+Sub-folder API-P-017-S03 | POST /api/payments/payments/create/
+  POST http://127.0.0.1:8765/api/payments/payments/create/ [200 OK, 373B, 38ms]
+
+Sub-folder API-P-017-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-017 [200 OK, 15.1kB, 1ms]
+
+Sub-folder API-P-017-S04 | DELETE /api/payments/payments/3/delete/
+  DELETE http://127.0.0.1:8765/api/payments/payments/3/delete/ [200 OK, 255B, 34ms]
+
+Sub-folder API-P-017-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-017 [200 OK, 15.11kB, 1ms]
+
+Sub-folder API-P-017 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-017 [200 OK, 394B, 17ms]
+
+Folder Payments / API-P-018 | Require both checkout redirect URLs
+Sub-folder API-P-018 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-018 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-P-018-S01 | POST /api/payments/1/pay/
+  POST http://127.0.0.1:8765/api/payments/1/pay/ [400 Bad Request, 251B, 38ms]
+
+Sub-folder API-P-018-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-018 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-018 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-018 [200 OK, 394B, 20ms]
+
+Folder Payments / API-P-019 | Create checkout and persist only its transaction ID
+Sub-folder API-P-019 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-019 [200 OK, 1.04kB, 27ms]
+
+Sub-folder API-P-019-S01 | POST /api/payments/1/pay/
+  POST http://127.0.0.1:8765/api/payments/1/pay/ [200 OK, 280B, 38ms]
+
+Sub-folder API-P-019-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-019 [200 OK, 15.87kB, 2ms]
+
+Sub-folder API-P-019 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-019 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-020 | Reject checkout for an already processed payment
+Sub-folder API-P-020 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-020 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-P-020-S01 | POST /api/payments/1/pay/
+  POST http://127.0.0.1:8765/api/payments/1/pay/ [200 OK, 280B, 37ms]
+
+Sub-folder API-P-020-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-020 [200 OK, 15.87kB, 2ms]
+
+Sub-folder API-P-020 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-020 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-021 | Handle checkout transport failure without a transaction ID change
+Sub-folder API-P-021 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-021 [200 OK, 1.04kB, 27ms]
+
+Sub-folder API-P-021-S01 | POST /api/payments/1/pay/
+  POST http://127.0.0.1:8765/api/payments/1/pay/ [400 Bad Request, 230B, 37ms]
+
+Sub-folder API-P-021-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-021 [200 OK, 15.86kB, 2ms]
+
+Sub-folder API-P-021 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-021 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-022 | Capture an unpaid gateway session with a failed payment transition
+Sub-folder API-P-022 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-022 [200 OK, 1.04kB, 34ms]
+
+Sub-folder API-P-022-S01 | POST /api/payments/1/capture/
+  POST http://127.0.0.1:8765/api/payments/1/capture/ [500 Internal Server Error, 321B, 44ms]
+
+Sub-folder API-P-022-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-022 [200 OK, 18.24kB, 2ms]
+
+Sub-folder API-P-022 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-022 [200 OK, 394B, 19ms]
+
+Folder Payments / API-P-023 | Capture a paid session and persist the booking/payment states
+Sub-folder API-P-023 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-023 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-P-023-S01 | POST /api/payments/1/capture/
+  POST http://127.0.0.1:8765/api/payments/1/capture/ [200 OK, 227B, 45ms]
+
+Sub-folder API-P-023-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-023 [200 OK, 21.81kB, 3ms]
+
+Sub-folder API-P-023 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-023 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-024 | Reject cash confirmation for online payment
+Sub-folder API-P-024 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-024 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-P-024-S01 | POST /api/payments/1/confirm_cash/
+  POST http://127.0.0.1:8765/api/payments/1/confirm_cash/ [400 Bad Request, 241B, 37ms]
+
+Sub-folder API-P-024-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-024 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-P-024 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-024 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-025 | Confirm cash booking while retaining its unpaid-on-arrival state
+Sub-folder API-P-025 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-025 [200 OK, 1.04kB, 34ms]
+
+Sub-folder API-P-025-S01 | POST /api/payments/1/confirm_cash/
+  POST http://127.0.0.1:8765/api/payments/1/confirm_cash/ [200 OK, 320B, 40ms]
+
+Sub-folder API-P-025-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-025 [200 OK, 19.4kB, 1ms]
+
+Sub-folder API-P-025 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-025 [200 OK, 394B, 17ms]
+
+Folder Payments / API-P-026 | Reject cash confirmation for a missing payment
+Sub-folder API-P-026 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-026 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-P-026-S01 | POST /api/payments/9999/confirm_cash/
+  POST http://127.0.0.1:8765/api/payments/9999/confirm_cash/ [404 Not Found, 239B, 36ms]
+
+Sub-folder API-P-026-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-026 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-P-026 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-026 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-027 | Return overview totals without altering payment data
+Sub-folder API-P-027 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-027 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-P-027-S01 | GET /api/payments/payments/overview/
+  GET http://127.0.0.1:8765/api/payments/payments/overview/ [200 OK, 441B, 35ms]
+
+Sub-folder API-P-027-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-027 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-P-027 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-027 [200 OK, 394B, 20ms]
+
+Folder Payments / API-P-028 | Reject malformed JWT on payment list
+Sub-folder API-P-028 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-028 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-P-028-S01 | GET /api/payments/payments/
+  GET http://127.0.0.1:8765/api/payments/payments/ [401 Unauthorized, 421B, 35ms]
+
+Sub-folder API-P-028-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-028 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-028 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-028 [200 OK, 394B, 18ms]
+
+Folder Payments / API-P-029 | Exclude unrelated services for flight-departure time filter
+Sub-folder API-P-029 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-029 [200 OK, 1.04kB, 31ms]
+
+Sub-folder API-P-029-S01 | GET /api/payments/payments/?min_flight_leg_departure=2030-01-01
+  GET http://127.0.0.1:8765/api/payments/payments/?min_flight_leg_departure=2030-01-01 [200 OK, 2.16kB, 46ms]
+
+Sub-folder API-P-029-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-029 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-P-029 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-029 [200 OK, 394B, 20ms]
+
+Folder Payments / API-P-030 | Reject malformed administrative payment JSON
+Sub-folder API-P-030 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-P-030 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-P-030-S01 | POST /api/payments/payments/create/
+  POST http://127.0.0.1:8765/api/payments/payments/create/ [400 Bad Request, 268B, 36ms]
+
+Sub-folder API-P-030-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-P-030 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-P-030 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-P-030 [200 OK, 394B, 21ms]
+
+Folder Promotions / API-PR-001 | List public campaigns with their exact campaign IDs
+Sub-folder API-PR-001 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-001 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-001-S01 | GET /api/promotions/
+  GET http://127.0.0.1:8765/api/promotions/ [200 OK, 2.48kB, 55ms]
+
+Sub-folder API-PR-001-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-001 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-PR-001 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-001 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-002 | Filter public promotions by hotel type
+Sub-folder API-PR-002 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-002 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-002-S01 | GET /api/promotions/?promotion_type=1
+  GET http://127.0.0.1:8765/api/promotions/?promotion_type=1 [200 OK, 807B, 48ms]
+
+Sub-folder API-PR-002-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-002 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-PR-002 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-002 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-003 | Retrieve a campaign with nested service promotions
+Sub-folder API-PR-003 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-003 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-003-S01 | GET /api/promotions/1/
+  GET http://127.0.0.1:8765/api/promotions/1/ [200 OK, 949B, 50ms]
+
+Sub-folder API-PR-003-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-003 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-PR-003 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-003 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-004 | Create a public campaign and verify persisted dates/percent
+Sub-folder API-PR-004 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-004 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-004-S01 | POST /api/promotions/
+  POST http://127.0.0.1:8765/api/promotions/ [201 Created, 517B, 35ms]
+
+Sub-folder API-PR-004-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-004 [200 OK, 15.83kB, 2ms]
+
+Sub-folder API-PR-004 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-004 [200 OK, 395B, 20ms]
+
+Folder Promotions / API-PR-005 | Reject public campaign without title
+Sub-folder API-PR-005 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-005 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-005-S01 | POST /api/promotions/
+  POST http://127.0.0.1:8765/api/promotions/ [400 Bad Request, 241B, 35ms]
+
+Sub-folder API-PR-005-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-005 [200 OK, 15.53kB, 1ms]
+
+Sub-folder API-PR-005 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-005 [200 OK, 395B, 17ms]
+
+Folder Promotions / API-PR-006 | Filter administrative campaigns by title
+Sub-folder API-PR-006 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-006 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-006-S01 | GET /api/promotions/promotions-admin/?title=Summer
+  GET http://127.0.0.1:8765/api/promotions/promotions-admin/?title=Summer [200 OK, 608B, 36ms]
+
+Sub-folder API-PR-006-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-006 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-PR-006 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-006 [200 OK, 395B, 17ms]
+
+Folder Promotions / API-PR-007 | Create a campaign through the administrative route
+Sub-folder API-PR-007 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-007 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-007-S01 | POST /api/promotions/promotions-admin/
+  POST http://127.0.0.1:8765/api/promotions/promotions-admin/ [201 Created, 459B, 39ms]
+
+Sub-folder API-PR-007-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-007 [200 OK, 15.85kB, 2ms]
+
+Sub-folder API-PR-007 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-007 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-008 | Reject a 256-character campaign title
+Sub-folder API-PR-008 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-008 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-008-S01 | POST /api/promotions/promotions-admin/
+  POST http://127.0.0.1:8765/api/promotions/promotions-admin/ [400 Bad Request, 268B, 36ms]
+
+Sub-folder API-PR-008-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-008 [200 OK, 15.55kB, 1ms]
+
+Sub-folder API-PR-008 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-008 [200 OK, 395B, 16ms]
+
+Folder Promotions / API-PR-009 | Update campaign through detail and dedicated PUT/PATCH routes
+Sub-folder API-PR-009 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-009 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-PR-009-S01 | PATCH /api/promotions/1/
+  PATCH http://127.0.0.1:8765/api/promotions/1/ [200 OK, 667B, 47ms]
+
+Sub-folder API-PR-009-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-009 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-PR-009-S02 | PUT /api/promotions/1/
+  PUT http://127.0.0.1:8765/api/promotions/1/ [200 OK, 665B, 49ms]
+
+Sub-folder API-PR-009-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-009 [200 OK, 15.55kB, 1ms]
+
+Sub-folder API-PR-009-S03 | PATCH /api/promotions/promotions/1/update/
+  PATCH http://127.0.0.1:8765/api/promotions/promotions/1/update/ [200 OK, 517B, 35ms]
+
+Sub-folder API-PR-009-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-009 [200 OK, 15.57kB, 2ms]
+
+Sub-folder API-PR-009-S04 | PUT /api/promotions/promotions/1/update/
+  PUT http://127.0.0.1:8765/api/promotions/promotions/1/update/ [200 OK, 515B, 37ms]
+
+Sub-folder API-PR-009-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-009 [200 OK, 15.56kB, 2ms]
+
+Sub-folder API-PR-009 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-009 [200 OK, 395B, 20ms]
+
+Folder Promotions / API-PR-010 | Delete a campaign and all service links through dedicated route
+Sub-folder API-PR-010 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-010 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-010-S01 | DELETE /api/promotions/promotions/1/delete/
+  DELETE http://127.0.0.1:8765/api/promotions/promotions/1/delete/ [200 OK, 257B, 37ms]
+
+Sub-folder API-PR-010-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-010 [200 OK, 14.69kB, 1ms]
+
+Sub-folder API-PR-010 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-010 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-011 | Delete a campaign through its detail route
+Sub-folder API-PR-011 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-011 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-011-S01 | DELETE /api/promotions/1/
+  DELETE http://127.0.0.1:8765/api/promotions/1/ [204 No Content, 184B, 38ms]
+
+Sub-folder API-PR-011-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-011 [200 OK, 14.67kB, 1ms]
+
+Sub-folder API-PR-011 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-011 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-012 | Create hotel campaign details with an explicit room discount
+Sub-folder API-PR-012 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-012 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-012-S01 | POST /api/promotions/create-details/
+  POST http://127.0.0.1:8765/api/promotions/create-details/ [201 Created, 358B, 37ms]
+
+Sub-folder API-PR-012-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-012 [200 OK, 16.05kB, 1ms]
+
+Sub-folder API-PR-012 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-012 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-013 | Reject invalid room in campaign details without partial links
+Sub-folder API-PR-013 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-013 [200 OK, 1.04kB, 27ms]
+
+Sub-folder API-PR-013-S01 | POST /api/promotions/create-details/
+  POST http://127.0.0.1:8765/api/promotions/create-details/ [400 Bad Request, 344B, 37ms]
+
+Sub-folder API-PR-013-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-013 [200 OK, 15.84kB, 1ms]
+
+Sub-folder API-PR-013 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-013 [200 OK, 395B, 18ms]
+
+Folder Promotions / API-PR-014 | List room campaign links with exact discount values
+Sub-folder API-PR-014 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-014 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-014-S01 | GET /api/promotions/room-promotions/
+  GET http://127.0.0.1:8765/api/promotions/room-promotions/ [200 OK, 2.74kB, 44ms]
+
+Sub-folder API-PR-014-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-014 [200 OK, 15.54kB, 1ms]
+
+Sub-folder API-PR-014 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-014 [200 OK, 395B, 18ms]
+
+Folder Promotions / API-PR-015 | Persist full room campaign-link lifecycle across exposed routes
+Sub-folder API-PR-015 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-015 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-015-S01 | POST /api/promotions/room-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/room-promotions/create/ [200 OK, 422B, 40ms]
+
+Sub-folder API-PR-015-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.76kB, 2ms]
+
+Sub-folder API-PR-015-S02 | GET /api/promotions/room-promotions/3/
+  GET http://127.0.0.1:8765/api/promotions/room-promotions/3/ [200 OK, 1.56kB, 40ms]
+
+Sub-folder API-PR-015-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.9kB, 1ms]
+
+Sub-folder API-PR-015-S03 | PATCH /api/promotions/room-promotions/3/
+  PATCH http://127.0.0.1:8765/api/promotions/room-promotions/3/ [200 OK, 1.48kB, 39ms]
+
+Sub-folder API-PR-015-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.93kB, 2ms]
+
+Sub-folder API-PR-015-S04 | PUT /api/promotions/room-promotions/3/
+  PUT http://127.0.0.1:8765/api/promotions/room-promotions/3/ [200 OK, 1.48kB, 40ms]
+
+Sub-folder API-PR-015-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.93kB, 1ms]
+
+Sub-folder API-PR-015-S05 | PATCH /api/promotions/room-promotions/3/update/
+  PATCH http://127.0.0.1:8765/api/promotions/room-promotions/3/update/ [200 OK, 428B, 40ms]
+
+Sub-folder API-PR-015-S05 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.94kB, 2ms]
+
+Sub-folder API-PR-015-S06 | PUT /api/promotions/room-promotions/3/update/
+  PUT http://127.0.0.1:8765/api/promotions/room-promotions/3/update/ [200 OK, 428B, 37ms]
+
+Sub-folder API-PR-015-S06 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.94kB, 1ms]
+
+Sub-folder API-PR-015-S07 | DELETE /api/promotions/room-promotions/3/
+  DELETE http://127.0.0.1:8765/api/promotions/room-promotions/3/ [204 No Content, 184B, 35ms]
+
+Sub-folder API-PR-015-S07 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.75kB, 2ms]
+
+Sub-folder API-PR-015-S08 | DELETE /api/promotions/room-promotions/2/delete/
+  DELETE http://127.0.0.1:8765/api/promotions/room-promotions/2/delete/ [200 OK, 262B, 36ms]
+
+Sub-folder API-PR-015-S08 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 15.4kB, 1ms]
+
+Sub-folder API-PR-015-S09 | POST /api/promotions/room-promotions/
+  POST http://127.0.0.1:8765/api/promotions/room-promotions/ [500 Internal Server Error, 321B, 50ms]
+
+Sub-folder API-PR-015-S09 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-015 [200 OK, 22.18kB, 2ms]
+
+Sub-folder API-PR-015 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-015 [200 OK, 395B, 20ms]
+
+Folder Promotions / API-PR-016 | Reject nonexistent room foreign key before link insertion
+Sub-folder API-PR-016 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-016 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-016-S01 | POST /api/promotions/room-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/room-promotions/create/ [400 Bad Request, 322B, 35ms]
+
+Sub-folder API-PR-016-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-016 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-PR-016 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-016 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-017 | List car campaign links with exact discount values
+Sub-folder API-PR-017 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-017 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-PR-017-S01 | GET /api/promotions/car-promotions/
+  GET http://127.0.0.1:8765/api/promotions/car-promotions/ [200 OK, 2.79kB, 45ms]
+
+Sub-folder API-PR-017-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-017 [200 OK, 15.54kB, 1ms]
+
+Sub-folder API-PR-017 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-017 [200 OK, 395B, 21ms]
+
+Folder Promotions / API-PR-018 | Persist full car campaign-link lifecycle across exposed routes
+Sub-folder API-PR-018 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-018 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-018-S01 | POST /api/promotions/car-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/car-promotions/create/ [200 OK, 420B, 40ms]
+
+Sub-folder API-PR-018-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.75kB, 2ms]
+
+Sub-folder API-PR-018-S02 | GET /api/promotions/car-promotions/3/
+  GET http://127.0.0.1:8765/api/promotions/car-promotions/3/ [200 OK, 1.59kB, 39ms]
+
+Sub-folder API-PR-018-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.9kB, 2ms]
+
+Sub-folder API-PR-018-S03 | PATCH /api/promotions/car-promotions/3/
+  PATCH http://127.0.0.1:8765/api/promotions/car-promotions/3/ [200 OK, 1.51kB, 41ms]
+
+Sub-folder API-PR-018-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.93kB, 2ms]
+
+Sub-folder API-PR-018-S04 | PUT /api/promotions/car-promotions/3/
+  PUT http://127.0.0.1:8765/api/promotions/car-promotions/3/ [200 OK, 1.51kB, 40ms]
+
+Sub-folder API-PR-018-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.92kB, 2ms]
+
+Sub-folder API-PR-018-S05 | PATCH /api/promotions/car-promotions/3/update/
+  PATCH http://127.0.0.1:8765/api/promotions/car-promotions/3/update/ [200 OK, 426B, 35ms]
+
+Sub-folder API-PR-018-S05 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.93kB, 2ms]
+
+Sub-folder API-PR-018-S06 | PUT /api/promotions/car-promotions/3/update/
+  PUT http://127.0.0.1:8765/api/promotions/car-promotions/3/update/ [200 OK, 426B, 37ms]
+
+Sub-folder API-PR-018-S06 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.93kB, 1ms]
+
+Sub-folder API-PR-018-S07 | DELETE /api/promotions/car-promotions/3/
+  DELETE http://127.0.0.1:8765/api/promotions/car-promotions/3/ [204 No Content, 184B, 36ms]
+
+Sub-folder API-PR-018-S07 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.75kB, 2ms]
+
+Sub-folder API-PR-018-S08 | DELETE /api/promotions/car-promotions/2/delete/
+  DELETE http://127.0.0.1:8765/api/promotions/car-promotions/2/delete/ [200 OK, 261B, 36ms]
+
+Sub-folder API-PR-018-S08 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 15.4kB, 2ms]
+
+Sub-folder API-PR-018-S09 | POST /api/promotions/car-promotions/
+  POST http://127.0.0.1:8765/api/promotions/car-promotions/ [500 Internal Server Error, 321B, 52ms]
+
+Sub-folder API-PR-018-S09 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-018 [200 OK, 22.18kB, 2ms]
+
+Sub-folder API-PR-018 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-018 [200 OK, 395B, 23ms]
+
+Folder Promotions / API-PR-019 | Reject nonexistent car foreign key before link insertion
+Sub-folder API-PR-019 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-019 [200 OK, 1.04kB, 32ms]
+
+Sub-folder API-PR-019-S01 | POST /api/promotions/car-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/car-promotions/create/ [400 Bad Request, 320B, 40ms]
+
+Sub-folder API-PR-019-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-019 [200 OK, 15.55kB, 1ms]
+
+Sub-folder API-PR-019 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-019 [200 OK, 395B, 21ms]
+
+Folder Promotions / API-PR-020 | List flight campaign links with exact discount values
+Sub-folder API-PR-020 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-020 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-020-S01 | GET /api/promotions/flight-promotions/
+  GET http://127.0.0.1:8765/api/promotions/flight-promotions/ [200 OK, 4.72kB, 49ms]
+
+Sub-folder API-PR-020-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-020 [200 OK, 15.55kB, 1ms]
+
+Sub-folder API-PR-020 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-020 [200 OK, 395B, 18ms]
+
+Folder Promotions / API-PR-021 | Persist full flight campaign-link lifecycle across exposed routes
+Sub-folder API-PR-021 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-021 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-021-S01 | POST /api/promotions/flight-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/flight-promotions/create/ [200 OK, 426B, 36ms]
+
+Sub-folder API-PR-021-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.76kB, 2ms]
+
+Sub-folder API-PR-021-S02 | GET /api/promotions/flight-promotions/3/
+  GET http://127.0.0.1:8765/api/promotions/flight-promotions/3/ [200 OK, 2.56kB, 43ms]
+
+Sub-folder API-PR-021-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.91kB, 1ms]
+
+Sub-folder API-PR-021-S03 | PATCH /api/promotions/flight-promotions/3/
+  PATCH http://127.0.0.1:8765/api/promotions/flight-promotions/3/ [200 OK, 2.47kB, 44ms]
+
+Sub-folder API-PR-021-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.94kB, 1ms]
+
+Sub-folder API-PR-021-S04 | PUT /api/promotions/flight-promotions/3/
+  PUT http://127.0.0.1:8765/api/promotions/flight-promotions/3/ [200 OK, 2.47kB, 48ms]
+
+Sub-folder API-PR-021-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.94kB, 2ms]
+
+Sub-folder API-PR-021-S05 | PATCH /api/promotions/flight-promotions/3/update/
+  PATCH http://127.0.0.1:8765/api/promotions/flight-promotions/3/update/ [200 OK, 432B, 37ms]
+
+Sub-folder API-PR-021-S05 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.95kB, 2ms]
+
+Sub-folder API-PR-021-S06 | PUT /api/promotions/flight-promotions/3/update/
+  PUT http://127.0.0.1:8765/api/promotions/flight-promotions/3/update/ [200 OK, 432B, 34ms]
+
+Sub-folder API-PR-021-S06 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.94kB, 2ms]
+
+Sub-folder API-PR-021-S07 | DELETE /api/promotions/flight-promotions/3/
+  DELETE http://127.0.0.1:8765/api/promotions/flight-promotions/3/ [204 No Content, 184B, 36ms]
+
+Sub-folder API-PR-021-S07 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.76kB, 2ms]
+
+Sub-folder API-PR-021-S08 | DELETE /api/promotions/flight-promotions/2/delete/
+  DELETE http://127.0.0.1:8765/api/promotions/flight-promotions/2/delete/ [200 OK, 264B, 38ms]
+
+Sub-folder API-PR-021-S08 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 15.41kB, 2ms]
+
+Sub-folder API-PR-021-S09 | POST /api/promotions/flight-promotions/
+  POST http://127.0.0.1:8765/api/promotions/flight-promotions/ [500 Internal Server Error, 321B, 59ms]
+
+Sub-folder API-PR-021-S09 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-021 [200 OK, 22.18kB, 2ms]
+
+Sub-folder API-PR-021 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-021 [200 OK, 395B, 20ms]
+
+Folder Promotions / API-PR-022 | Reject nonexistent flight foreign key before link insertion
+Sub-folder API-PR-022 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-022 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-022-S01 | POST /api/promotions/flight-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/flight-promotions/create/ [400 Bad Request, 326B, 38ms]
+
+Sub-folder API-PR-022-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-022 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-PR-022 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-022 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-023 | List activity campaign links with exact discount values
+Sub-folder API-PR-023 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-023 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-023-S01 | GET /api/promotions/activity-promotions/
+  GET http://127.0.0.1:8765/api/promotions/activity-promotions/ [200 OK, 2.47kB, 44ms]
+
+Sub-folder API-PR-023-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-023 [200 OK, 15.55kB, 2ms]
+
+Sub-folder API-PR-023 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-023 [200 OK, 395B, 18ms]
+
+Folder Promotions / API-PR-024 | Persist full activity campaign-link lifecycle across exposed routes
+Sub-folder API-PR-024 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-024 [200 OK, 1.04kB, 33ms]
+
+Sub-folder API-PR-024-S01 | POST /api/promotions/activity-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/activity-promotions/create/ [200 OK, 435B, 37ms]
+
+Sub-folder API-PR-024-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.77kB, 1ms]
+
+Sub-folder API-PR-024-S02 | GET /api/promotions/activity-promotions/3/
+  GET http://127.0.0.1:8765/api/promotions/activity-promotions/3/ [200 OK, 1.43kB, 39ms]
+
+Sub-folder API-PR-024-S02 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.92kB, 2ms]
+
+Sub-folder API-PR-024-S03 | PATCH /api/promotions/activity-promotions/3/
+  PATCH http://127.0.0.1:8765/api/promotions/activity-promotions/3/ [200 OK, 1.34kB, 36ms]
+
+Sub-folder API-PR-024-S03 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.96kB, 2ms]
+
+Sub-folder API-PR-024-S04 | PUT /api/promotions/activity-promotions/3/
+  PUT http://127.0.0.1:8765/api/promotions/activity-promotions/3/ [200 OK, 1.34kB, 45ms]
+
+Sub-folder API-PR-024-S04 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.95kB, 2ms]
+
+Sub-folder API-PR-024-S05 | PATCH /api/promotions/activity-promotions/3/update/
+  PATCH http://127.0.0.1:8765/api/promotions/activity-promotions/3/update/ [200 OK, 441B, 37ms]
+
+Sub-folder API-PR-024-S05 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.96kB, 2ms]
+
+Sub-folder API-PR-024-S06 | PUT /api/promotions/activity-promotions/3/update/
+  PUT http://127.0.0.1:8765/api/promotions/activity-promotions/3/update/ [200 OK, 441B, 39ms]
+
+Sub-folder API-PR-024-S06 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.96kB, 2ms]
+
+Sub-folder API-PR-024-S07 | DELETE /api/promotions/activity-promotions/3/
+  DELETE http://127.0.0.1:8765/api/promotions/activity-promotions/3/ [204 No Content, 184B, 37ms]
+
+Sub-folder API-PR-024-S07 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.77kB, 2ms]
+
+Sub-folder API-PR-024-S08 | DELETE /api/promotions/activity-promotions/2/delete/
+  DELETE http://127.0.0.1:8765/api/promotions/activity-promotions/2/delete/ [200 OK, 266B, 38ms]
+
+Sub-folder API-PR-024-S08 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 15.4kB, 2ms]
+
+Sub-folder API-PR-024-S09 | POST /api/promotions/activity-promotions/
+  POST http://127.0.0.1:8765/api/promotions/activity-promotions/ [500 Internal Server Error, 321B, 55ms]
+
+Sub-folder API-PR-024-S09 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-024 [200 OK, 22.18kB, 1ms]
+
+Sub-folder API-PR-024 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-024 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-025 | Reject nonexistent activity foreign key before link insertion
+Sub-folder API-PR-025 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-025 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-025-S01 | POST /api/promotions/activity-promotions/create/
+  POST http://127.0.0.1:8765/api/promotions/activity-promotions/create/ [400 Bad Request, 335B, 35ms]
+
+Sub-folder API-PR-025-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-025 [200 OK, 15.56kB, 2ms]
+
+Sub-folder API-PR-025 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-025 [200 OK, 395B, 17ms]
+
+Folder Promotions / API-PR-026 | Bulk create activity links with exact related IDs and discount
+Sub-folder API-PR-026 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-026 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-026-S01 | POST /api/promotions/activity-promotions/create/bulk/
+  POST http://127.0.0.1:8765/api/promotions/activity-promotions/create/bulk/ [201 Created, 272B, 34ms]
+
+Sub-folder API-PR-026-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-026 [200 OK, 15.97kB, 2ms]
+
+Sub-folder API-PR-026 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-026 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-027 | Bulk delete selected activity links only
+Sub-folder API-PR-027 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-027 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-027-S01 | DELETE /api/promotions/activity-promotions/bulk-delete/
+  DELETE http://127.0.0.1:8765/api/promotions/activity-promotions/bulk-delete/ [200 OK, 269B, 35ms]
+
+Sub-folder API-PR-027-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-027 [200 OK, 15.22kB, 2ms]
+
+Sub-folder API-PR-027 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-027 [200 OK, 395B, 19ms]
+
+Folder Promotions / API-PR-028 | Reject unknown promotion type before campaign insertion
+Sub-folder API-PR-028 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-028 [200 OK, 1.04kB, 30ms]
+
+Sub-folder API-PR-028-S01 | POST /api/promotions/promotions-admin/
+  POST http://127.0.0.1:8765/api/promotions/promotions-admin/ [400 Bad Request, 256B, 41ms]
+
+Sub-folder API-PR-028-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-028 [200 OK, 15.55kB, 1ms]
+
+Sub-folder API-PR-028 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-028 [200 OK, 395B, 17ms]
+
+Folder Promotions / API-PR-029 | Exclude campaigns with an end date before requested minimum
+Sub-folder API-PR-029 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-029 [200 OK, 1.04kB, 29ms]
+
+Sub-folder API-PR-029-S01 | GET /api/promotions/promotions-admin/?min_date=2040-01-01
+  GET http://127.0.0.1:8765/api/promotions/promotions-admin/?min_date=2040-01-01 [200 OK, 342B, 46ms]
+
+Sub-folder API-PR-029-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-029 [200 OK, 15.54kB, 2ms]
+
+Sub-folder API-PR-029 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-029 [200 OK, 395B, 21ms]
+
+Folder Promotions / API-PR-030 | Reject a missing campaign resource
+Sub-folder API-PR-030 | BEGIN
+  POST http://127.0.0.1:8765/__test__/begin/API-PR-030 [200 OK, 1.04kB, 28ms]
+
+Sub-folder API-PR-030-S01 | GET /api/promotions/9999/
+  GET http://127.0.0.1:8765/api/promotions/9999/ [404 Not Found, 266B, 34ms]
+
+Sub-folder API-PR-030-S01 | CHECK DATABASE
+  GET http://127.0.0.1:8765/__test__/inspect/API-PR-030 [200 OK, 15.53kB, 2ms]
+
+Sub-folder API-PR-030 | ROLLBACK
+  POST http://127.0.0.1:8765/__test__/rollback/API-PR-030 [200 OK, 395B, 18ms]
+
+------------------------------------------------------------------
+|                         |          executed |           failed |
+--------------------------+-------------------+-------------------
+|              iterations |                 1 |                0 |
+--------------------------+-------------------+-------------------
+|                requests |               736 |                0 |
+--------------------------+-------------------+-------------------
+|            test-scripts |               736 |                0 |
+--------------------------+-------------------+-------------------
+|      prerequest-scripts |                 0 |                0 |
+--------------------------+-------------------+-------------------
+|              assertions |               954 |               37 |
+------------------------------------------------------------------
+| total run duration: 1m 18.7s                                   |
+------------------------------------------------------------------
+| total data received: 3.72MB (approx)                           |
+------------------------------------------------------------------
+| average response time: 22ms [min: 1ms, max: 263ms, s.d.: 18ms] |
+------------------------------------------------------------------

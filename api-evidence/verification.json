@@ -1,0 +1,21 @@
+{
+  "cases": 150,
+  "case_outcomes_reproduced": true,
+  "all_218_HTTP_statuses_reproduced": true,
+  "assertions": 954,
+  "failed_assertions": 37,
+  "outcomes": {
+    "PASS": 134,
+    "FAIL": 16
+  },
+  "main_rollback_verified": 150,
+  "replay_rollback_verified": 150,
+  "source_files_byte_identical": 85,
+  "script_hashes_verified": 14,
+  "exact_case_ID_comments": 150,
+  "visible_collection_requests": 736,
+  "endpoint_method_pairs_exercised": 124,
+  "newman_exit_code": 1,
+  "workbook_validation": "150 statuses and reasons; 218 detailed expected outputs; native Excel formula caches; English cells; no frozen/split panes; all eight sheets visually reviewed.",
+  "reproduction": "Independent source snapshot under backend; same Postman collection and isolated HTTP harness; separate fresh database/server execution."
+}

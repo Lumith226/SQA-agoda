@@ -44,3 +44,7 @@ python -m venv .venv
 The Excel report follows the supplied eight-sheet template. PASS notes are empty. FAIL notes explain the observed discrepancy. Sources and execution locators are stored as Excel cell notes, with no source column.
 
 The original application backend is identified in the supplied thesis as https://github.com/nam-Space/agoda-be. This test repository was specified by the user as https://github.com/Lumith226/SQA-agoda.
+
+## API testing with Postman
+
+The new API suite contains 150 cases (30 per module), 218 target requests and explicit DB checks/rollback. See [API_TESTING.md](API_TESTING.md), the [Postman collection](postman/Agoda_API_Tests.postman_collection.json) and [API Excel report](reports/5_API_Test_Report_EN.xlsx). Original unit-test results above remain a separate suite.

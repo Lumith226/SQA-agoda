@@ -4,3 +4,7 @@ work/tests/** -text
 *.xlsx binary
 *.png binary
 *.log -text
+
+work/api_testing/** -text
+postman/** -text
+api-evidence/** -text

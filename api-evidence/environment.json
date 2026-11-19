@@ -1,0 +1,35 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "node": "v25.8.2",
+  "newman": "6.2.1",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.EXE",
+    "C:\\Users\\Admin\\Downloads\\UnitTest\\work\\postman_runtime\\node_modules\\newman\\bin\\newman.js",
+    "run",
+    "C:\\Users\\Admin\\Downloads\\UnitTest\\work\\api_testing\\Agoda_API_Tests.postman_collection.json",
+    "--env-var",
+    "base_url=http://127.0.0.1:8765",
+    "--reporters",
+    "cli,json,junit",
+    "--reporter-json-export",
+    "C:\\Users\\Admin\\Downloads\\UnitTest\\work\\api_testing\\final_evidence\\newman_report.json",
+    "--reporter-junit-export",
+    "C:\\Users\\Admin\\Downloads\\UnitTest\\work\\api_testing\\final_evidence\\newman_junit.xml",
+    "--reporter-cli-no-assertions",
+    "--reporter-cli-no-failures",
+    "--disable-unicode",
+    "--color",
+    "off",
+    "--timeout-request",
+    "15000",
+    "--timeout-script",
+    "15000"
+  ],
+  "database": "isolated in-memory SQLite",
+  "service_doubles": [
+    "Stripe checkout/refund transport",
+    "in-memory mail/channel delivery"
+  ],
+  "newman_exit_code": 1,
+  "active_transaction_after_run": null
+}
